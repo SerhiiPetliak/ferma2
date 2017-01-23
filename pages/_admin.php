@@ -17,12 +17,11 @@ if(isset($_GET["sel"])){
 		case "config": include("pages/admin/_config.php"); break; // Настройки
 		case "contacts": include("pages/admin/_contacts.php"); break; // Контакты
 		case "rules": include("pages/admin/_rules.php"); break; // Правила
-		case "monitor": include("pages/admin/_monitor_a.php"); break; // Мониторинг
 		case "pay_systems": include("pages/admin/_pay_systems.php"); break; // Платежные системы
-        case "about": include("pages/admin/_about.php"); break; // о ферме
+          case "about": include("pages/admin/_about.php"); break; // о ферме
 		case "compconfig": include("pages/admin/_compconfig.php"); break; // Управление конкурсами
-        case "multi": include("pages/admin/_multi.php"); break; // мульти аккаунты
-        case "story_buy": include("pages/admin/_story_buy.php"); break; // История покупок деревьев
+
+          case "story_buy": include("pages/admin/_story_buy.php"); break; // История покупок деревьев
 		case "story_swap": include("pages/admin/_story_swap.php"); break; // История обмена в обменнике
 		case "story_insert": include("pages/admin/_story_insert.php"); break; // История пополнений баланса
 		case "story_sell": include("pages/admin/_story_sell.php"); break; // История рынка
@@ -31,7 +30,7 @@ if(isset($_GET["sel"])){
 		case "sender": include("pages/admin/_sender.php"); break; // Рассылка пользователям	
 		case "payments": include("pages/admin/_payments.php"); break; // Запросы на выплаты WM
 
-        case "serfing_moder": include("pages/admin/_serfing_moder.php"); break; // Серфинг
+        case "serfing_moder": include("pages/admin/_serfing_moder.php"); break;
 
         case "jobs": include("pages/admin/_jobs.php"); break; // Задания
 

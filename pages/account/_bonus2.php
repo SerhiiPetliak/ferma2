@@ -5,20 +5,19 @@ $uname = $_SESSION["user"];
 
 # Настройки бонусов
 $bonus_min = -50;
-$bonus_max = 300;
+$bonus_max = 50;
 
 ?>
 <div class="text_right">
 <div class="text_pages_top"></div>
-<div class="text_pages_content"> 
- <?php include("link_s.php");?>
+<div class="text_pages_content">  
 <div class="" style="padding-top:0px;">
 <center><b>Бонус с риском</b></center>
 
 <BR />
 Это бонус для любителей рискнуть :) Рискни и может быть ты не плохой бонус получишь..
 Бонус выдется 1 раз в 96 часов. <BR />
-Бонус выдается золотом на счет для покупок. <BR />
+Бонус выдается золото на счет для покупок. <BR />
 Сумма бонуса генерируется случайно от <b><?=$bonus_min;?></b> до <b><?=$bonus_max;?></b> золота.
 <BR /><BR />
 <?PHP
@@ -76,12 +75,6 @@ $hide_form = false;
 
 
 <table cellpadding='3' cellspacing='0' border='0' bordercolor='blue' align='center' width="99%">
-<tr><br><br>
-  <div style="font-size: 18px; color: #006400">
-  Это может быть интересно:</div>
-  <br>
- <center><div id="linkslot_144544"><script src="https://linkslot.ru/bancode.php?id=144544" async></script></div></center>
- </tr>
   <tr>
     <td colspan="5" align="center"><h4>Последние 10 бонусов</h4></td>
     </tr>
@@ -119,5 +112,4 @@ $hide_form = false;
 </div>
 </div>
 <div class="text_pages_bottom"></div>
-<?php include("_200x300.php");?>
 </div>

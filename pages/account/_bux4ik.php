@@ -13,7 +13,6 @@ $bonus_max = 2000;
 <div class="text_right">
 <div class="text_pages_top"></div>
 <div class="text_pages_content">  
-<?php include("link_s.php");?>
 <div class="" style="padding-top:0px;">
 <center><b>Коробка удачи</b></center>
 
@@ -47,9 +46,7 @@ margin-top: 5px;
 
 </style>
 
-<center>Одна игра стоит <b><?=$amount_lottery;?></b> монет, вы можете выиграть до <b><?=$bonus_max;?></b> монет.<BR /></center><BR />
-<div style="font-size: 12px; color: #FF0000">
-		Напоминаем что данная игра относится к категории азартных и может привести к потере ваших денег!</div>
+<center>Одна игра стоит <b><?=$amount_lottery;?></b> монет, вы можете выиграть до <b><?=$bonus_max;?></b> монет.<BR /></center>
 
 <p> </p>
 <form action="" method="post">
@@ -180,12 +177,6 @@ $(this).rotate({animateTo:0})
 
 
 <table cellpadding='3' cellspacing='0' border='0' bordercolor='#336633' align='center' width="99%">
-<tr><br><br>
-  <div style="font-size: 18px; color: #006400">
-  Это может быть интересно:</div>
-<br>
-<center><div id="linkslot_144544"><script src="https://linkslot.ru/bancode.php?id=144544" async></script></div></center> 
-<br>
   <tr>
     <td colspan="5" align="center"><h4>Последние 20 участники</h4></td>
     </tr>
@@ -196,6 +187,7 @@ $(this).rotate({animateTo:0})
 	<td align="center" class="m-tb">Дата</td>
   </tr>
   <?PHP
+  
   $db->Query("SELECT * FROM db_baraban4ik ORDER BY id DESC LIMIT 20");
   
 	if($db->NumRows() > 0){
@@ -222,7 +214,6 @@ $(this).rotate({animateTo:0})
 </div>
 </div>
 <div class="text_pages_bottom"></div>
-<?php include("_200x300.php");?>
 </div>
 
 

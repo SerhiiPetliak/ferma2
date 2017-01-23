@@ -41,5 +41,4 @@ if($db->NumRows() > 0){
 </div>
 </div>
 <div class="text_pages_bottom"></div>
-<?php include("_200x300.php");?>
 </div>	

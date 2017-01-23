@@ -7,7 +7,7 @@ $usname = $_SESSION["user"];
 <div class="text_right">
 <div class="text_pages_top"></div>
 <div class="text_pages_content">
-   <?php include("link_s.php");?>          
+             
 <div class="s_divide"></div>
 
 <?php 
@@ -68,15 +68,16 @@ $citem = $array_items[$item];
 
 <div class="shop">
 	<div class="block">
-		<div class="block_name"></span>Животное: Курица / Доходность динамическая!</div>
+		<div class="block_name"></span>Животное: Курица</div>
 		<div style="margin-top: -5px;" class="block_list"><ul class="block_ul">
 		<li>Продуктивность: <b><?=$sonfig_site["a_in_h"]; ?></b> в час</li>
 		<li>Куплено: <b><?=$user_data["a_t"]; ?></b> шт.</li>
 		<li>
-		Данное животное можно купить или продать на Птичьем рынке! Доходность курицы зависит от цены по которой вы ее купили!
-		</li>
-		<li>
-		<button><a href="/account/birja" style="margin-top:10px;">Перейти на Птичий рынок</a></button>
+		<form method="post" action="/account/shop.html">
+		<input type="hidden" value="1" name="item">
+		<input type="submit" class="subm_button" style="float: right;margin-top: 10px;" value="Купить">
+		</form>
+		ЦЕНА: <span style="font-size: 22px;"><b><?=$sonfig_site["amount_a_t"]; ?></b></span> монет
 		</li>
 		</ul>
 		</div>
@@ -87,7 +88,7 @@ $citem = $array_items[$item];
 
 <div class="shop">
 	<div class="block">
-		<div class="block_name"></span>Животное: Свинья / Доходность 18% в месяц</div>
+		<div class="block_name"></span>Животное: Свинья</div>
 		<div style="margin-top: -5px;" class="block_list"><ul class="block_ul">
 		<li>Продуктивность: <b><?=$sonfig_site["b_in_h"]; ?></b> в час</li>
 		<li>Куплено: <b><?=$user_data["b_t"]; ?></b> шт.</li>
@@ -105,7 +106,7 @@ $citem = $array_items[$item];
 
 <div class="shop">
 	<div class="block">
-		<div class="block_name"></span>Животное: Овца / Доходность 21.6% в месяц</div>
+		<div class="block_name"></span>Животное: Овца</div>
 		<div style="margin-top: -5px;" class="block_list"><ul class="block_ul">
 		<li>Продуктивность: <b><?=$sonfig_site["c_in_h"]; ?></b> в час</li>
 		<li>Куплено: <b><?=$user_data["c_t"]; ?></b> шт.</li>
@@ -123,7 +124,7 @@ $citem = $array_items[$item];
 
 <div class="shop">
 	<div class="block">
-		<div class="block_name"></span>Животное: Коза / Доходность 25.2% в месяц</div>
+		<div class="block_name"></span>Животное: Коза</div>
 		<div style="margin-top: -5px;" class="block_list"><ul class="block_ul">
 		<li>Продуктивность: <b><?=$sonfig_site["d_in_h"]; ?></b> в час</li>
 		<li>Куплено: <b><?=$user_data["d_t"]; ?></b> шт.</li>
@@ -141,7 +142,7 @@ $citem = $array_items[$item];
 
 <div class="shop">
 	<div class="block">
-		<div class="block_name"></span>Животное: Корова / Доходность 28.8% в месяц</div>
+		<div class="block_name"></span>Животное: Корова</div>
 		<div style="margin-top: -5px;" class="block_list"><ul class="block_ul">
 		<li>Продуктивность: <b><?=$sonfig_site["e_in_h"]; ?></b> в час</li>
 		<li>Куплено: <b><?=$user_data["e_t"]; ?></b> шт.</li>
@@ -162,7 +163,6 @@ $citem = $array_items[$item];
 
 </div>
 <div class="text_pages_bottom"></div>
-<?php include("_200x300.php");?>
 </div>
 
 

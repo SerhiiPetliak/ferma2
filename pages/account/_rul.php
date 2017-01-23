@@ -1,17 +1,15 @@
 <div class="text_right">
 <div class="text_pages_top"></div>
-<div class="text_pages_content"> 
- <?php include("link_s.php");?>
+<div class="text_pages_content">  
 <div class="" style="padding-top:0px;">
 	<center><b>Игра Наперстки</b></center>
 
 <br>
-ВНИМАНИЕ: Игра проводится со счета для вывода. <BR />
-   <p>  Суть игры очень проста <BR />
+ВНИМАНИЕ: золото,которое Вы проиграли возврату не подлежит. <BR />
+     <p>Суть игры очень проста <BR />
 Необходимо угадать под каким наперстком спрятаны монеты!<BR />
-В случае выигрыша ваша ставка увеличивается в 2 раза и зачисляется на баланс!
-		<div style="font-size: 12px; color: #FF0000">
-		Напоминаем что данная игра относится к категории азартных и может привести к потере ваших денег</div><BR /><BR />
+В случае выигрыша ваша ставка увеличивается в 2 раза и зачисляется на баланс для вывода!
+<BR />
 <?PHP
 $_OPTIMIZATION["title"] = "Аккаунт - Наперстки";
 $usid = $_SESSION["user_id"];
@@ -144,12 +142,6 @@ if ($win == 1 and $naper == 3) {
 <center><h3>Ваши последние игры</h3></center><p>
     
 <table cellpadding='3' cellspacing='0' border='0' bordercolor='#336633' align='center' width="99%">
-<tr><br><br>
-  <div style="font-size: 18px; color: #006400">
-  Это может быть интересно:</div>
- <br>
-   <center><div id="linkslot_144544"><script src="https://linkslot.ru/bancode.php?id=144544" async></script></div></center>
- <br>
   
   <tr>
     <td align="center" class="m-tb">Сумма</td>
@@ -195,7 +187,6 @@ if ($win == 1 and $naper == 3) {
 </div>
 </div>
 <div class="text_pages_bottom"></div>
-<?php include("_200x300.php");?>
 </div>
 
 

@@ -1,73 +1,11 @@
-<?
-//Проверяем Пост, Гет и куки на ненужные символы
-$arrs=array('_GET', '_POST', '_COOKIE');
-foreach($arrs as $arr_key => $arr_value){
-    if(is_array($$arr_value)){
-        foreach($$arr_value as $key => $value){
-            $nbz1=substr_count($value,'--');
-            $nbz2=substr_count($value,'/*');
-            $nbz3=substr_count($value,"'");
-            $nbz4=substr_count($value,'"');
-            if($nbz1>0 || $nbz2>0 || $nbz3>0 || $nbz4>0){
-                print '<div class="error">Вы используете недопустимые символы или ваш ПК заражен вирусом '.str_replace('_','',$arr_value).'-повторите попытку позже!<br><a href="javascript:window.history.back();">Назад</a></div>';
-                exit();
-            }
-        }
-    }
-}
-
-
-
-
-
-
-
-
-
-$_OPTIMIZATION["title"] = "";
-$usid = $_SESSION["user_id"];
-$usname = $_SESSION["user"];
-
-$db->Query("SELECT * FROM db_config WHERE id = '1' LIMIT 1");
-$sonfig_site = $db->FetchArray();
-
-
-
-/*
-if($_SESSION["user_id"] != 1){
-echo "<center><b><font color = red>Технические работы</font></b></center>";
-return;
-}
-*/
-?>
-
 <?php
-header("Content-Type: text/html; charset=windows-1251");
-?>
-
-<div class="text_right">
-
-	<div class="text_pages_top"></div>
-	<div class="text_pages_content">
-	
-
-<div style="margin:0 auto; padding-top:20px;">
-
-<script type="text/javascript" src="https://yandex.st/jquery/1.6.2/jquery.min.js"></script>
-<script LANGUAGE="JavaScript1.1"> 
-document.oncontextmenu = function(){return false;}; 
-</script>	
-
-<?php
-$_OPTIMIZATION["title"] = "Общение";
 if(!isset($_SESSION["user"]))
 	return;
 	
-header("Content-type: text/html; charset=windows-1251");
+
 $db->query("SET NAMES cp1251");
 ?>
 <script type="text/javascript" src="/js/cookies.js" /></script>
-
 <script type="text/javascript">
 function insert_comm(open, close, no_focus)
 {
@@ -95,23 +33,9 @@ function insert_comm(open, close, no_focus)
 				url: "/ajax/chat.php?p=get",
 				data: "",
 				success: function(result){
-					if($("#chat #chat_scroll").html() != result)
-						$("#chat #chat_scroll").html(result);
-						$("#chat #chat_scroll").scrollTo(9999);					
+					if($("#chat .history").html() != result)
+						$("#chat .history").html(result);					
 				}
-			});
-		}
-    
-    function reset_online(){
-			$.ajax({
-				type: "POST",
-			//	url: "/ajax/chat.php?p=online",
-				data: "",
-				success: function(result){
-					
-						$("#chat #chat-online").html(result);
-								
-        }
 			});
 		}
 		
@@ -134,10 +58,8 @@ function insert_comm(open, close, no_focus)
 		$(function(){	
 		
 			reset_chat();
-      reset_online();
 			
 			setInterval(reset_chat, 7000);
-      setInterval(reset_online, 50000);
 			setInterval(reset_warning, 9000);
 								
 			$('#chat #form_com').submit(function(e){
@@ -157,86 +79,85 @@ function insert_comm(open, close, no_focus)
 						
 			});
 			
-			$('#chat #chat_scroll .user').click(function(){
-      
-				$('#chat .message input[name="comment"]').val($(this).text() + $('#chat .message input[name="comment"]').val());
-			});
-      
-      $('#chat #chat-online .user').click(function(){
-       
+			$('#chat .history .user').click(function(){
 				$('#chat .message input[name="comment"]').val($(this).text() + $('#chat .message input[name="comment"]').val());
 			});
 			
 		});
 </script>
-<style type="text/css" href="/style/style.css">
-
-#chat{position:relative;
-bottom:<?php
-if(!isset($_SESSION['chathide']))
-	$_SESSION["chathide"] = false;
-
-if(isset($_GET['chats'])){
-	if($_SESSION['chathide'] == false)
-		$_SESSION["chathide"] = true;
-	else
-		$_SESSION["chathide"] = false;
-}
-
-echo $_SESSION['chathide'] == false?'10':'-155';
-?>px; margin-top:10px; width:620px; background:#edf3f8; opacity:0.8; box-shadow: 0 0 10px rgba(1,1,1,10); padding:15px 10px 2px 12px; z-index:1; border:4px solid #134786;}
-#chat #chat_scroll{height:360px; width:580px; display: inline-block; font-size:14px; padding:2px; overflow: auto; line-height:20px;}
+<style type="text/css">
+#chat .history{height:510px; border-bottom:1px solid #fff; font-size:14px; padding:2px; overflow: auto; line-height:20px;}
 #chat .swich{position:absolute; display:block; right:-2px; top:-31px; cursor:pointer; height:33px; width:155px; background:url(/img/chat/swich.png); text-align:center; line-height:33px;}
-#chat #chat_scroll .user{font-weight:900; color:00f; text-decoration:underline; cursor:pointer;}
-#chat #chat_scroll .user:hover{text-decoration:none;}
-#chat #chat-online .user:hover{text-decoration:none;}
-#chat #chat_scroll .to{background:#fff;}
-#chat #chat_scroll .private{color:#f00;}
-#chat #chat_scroll .time{color:#fff; float:left;}
-#chat .message input[name="comment"]{background:#fff;
-float:left;
-color:#000;
-border:1px solid #1b538d;	
-width:500px;
-margin:14px 6px 5px 0px;
-padding:0px 15px 0px 15px;	
-height:43px;
-font-size:16px;}
-#chat .message input[name="message_sub"]{
-	background-color:#194e7f;
-	text-decoration:none;
-	border: none;
-	color:#FFFFFF;
-	width:148px;
-	padding:10px 0px 9px 0px;
-	margin:15px 6px 5px 0px;
-	cursor:pointer;
-	font-size:20px;
-	font-family: 'PT Sans', sans-serif;}
+#chat .history .user{font-weight:900; color:00f; text-decoration:underline; cursor:pointer;}
+
+#chat .history .user:hover{text-decoration:none;}
+#chat .history .to{background:#a4c5a3;}
+#chat .history .private{color:#f00;}
+#chat .history .time{color:#999;}
+#chat .history img{vertical-align:middle;}
+#chat .bbcode, #chat .message{line-height:25px; border-bottom:1px solid #fff;}
+#chat .bbcode{padding:0 10px; color:#fff;}
+#chat .bbcode img{padding:0 1px; vertical-align:middle; cursor:pointer;}
+#chat .bbcode #warnings{font-weight:900;}
+#chat .message input[name="comment"] {
+  font-size: 15px;
+  height: 28px;
+  margin: 10px;
+  padding: 0;
+  width: 487px;
+}
+#chat .message input[name="message_sub"] {
+  margin: 0 0 10px 10px;
+}
 </style>
 <div id="chat">
-	
-	<div id="chat_scroll">Загрузка...</div>
-  <div id="clear: both;"></div>
+<div class="text_right">
+<div class="text_pages_top"></div>
+<div class="text_pages_content">            
+<div class="s_divide"></div>
+
+<div class="shop">
+<div class="block">
+<div class="block_name">Чат проекта</div>
+	<div class="block_img1" style="font-size: 16px; color: red">
+		Запрещено использовать нецензурные выражения и спамить. 
+		Запрещено оставлять ссылки на другие сайты/проекты. 
+		Запрещено оставлять провокационные комментарии.
+		За нарушение бан в проекте! 
+		Если у вас возникла проблема - пишите в поддержку.
+	</div>
+<div class="s_divide"></div>	
+	<div class="history">Загрузка...</div>
+	<div class="bbcode">
+		<img onclick="insert_comm('','*smile*')" src="/img/chat/smile/smile.gif" alt="" />
+		<img onclick="insert_comm('','*sadness*')" src="/img/chat/smile/sadness.gif" alt="" />
+		<img onclick="insert_comm('','*laugh*')" src="/img/chat/smile/laugh.gif" alt="" />
+		<img onclick="insert_comm('','*wonder*')" src="/img/chat/smile/wonder.gif" alt="" />
+		<img onclick="insert_comm('','*tongue*')" src="/img/chat/smile/tongue.gif" alt="" />
+		<img onclick="insert_comm('','*dance*')" src="/img/chat/smile/dance.gif" alt="" />
+		<img onclick="insert_comm('','*THUMBS_UP*')" src="/img/chat/smile/THUMBS_UP.gif" alt="" />
+		
+		
+		<img onclick="insert_comm('','*kez_02*')" src="/img/chat/smile/kez_02.gif"  alt="" />
+		<img onclick="insert_comm('','*alvarin_34*')" src="/img/chat/smile/alvarin_34.gif" alt="" />
+		<img onclick="insert_comm('','*drag_06*')" src="/img/chat/smile/drag_06.gif" alt="" />
+		<img onclick="insert_comm('','*kidrock_07*')" src="/img/chat/smile/kidrock_07.gif" alt="" />
+		<img onclick="insert_comm('','*dont*')" src="/img/chat/smile/dont.gif" alt="" />
+		
+		<span id="warnings"></span>
+	</div>
 	<div class="message">
 		<form id="form_com" action="#form_com" method="post">
-			<input type="text" id="comment" placeholder="Сообщение" name="comment" maxlength="250" />
+			<input class="input_text_m" style="height:50px;" type="text" id="comment" name="comment" maxlength="1055" />
 			<input type="hidden" name="to" />
 			 <input type="submit" name="message_sub" value="Отправить" />
-</div> 
-</div>		 
 		</form>
-</div>							
-<br>
-		</div>
-	<div class="text_pages_bottom"></div>
-	<?php include("_200x300.php");?>
-</div>
-
-
-
-
-
+	</div>
+	</div>
+	</div>
 	
-
+</div>
+<div class="text_pages_bottom"></div>
+</div>
+</div>
 

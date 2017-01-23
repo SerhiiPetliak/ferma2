@@ -1,11 +1,3 @@
-<?php
-header("Content-Type: text/html; charset=windows-1251");
-?>
-
-<div class="text_right">
-
-	<div class="text_pages_top"></div>
-	<div class="text_pages_content">
 <?
 $usid = $_SESSION["user_id"];
 $usname = $_SESSION["user"];
@@ -13,9 +5,11 @@ $usname = $_SESSION["user"];
 $db->Query("SELECT * FROM db_users_b WHERE id = '$usid' LIMIT 1");
 $user_data = $db->FetchArray();
 
-$cena = 1; //Стоимость отправки сообщения пользователю
-$cena_ref = 2;// Стоимость отправки сообщения рефералам!
+$cena = 10; //Стоимость отправки сообщения пользователю
+$cena_ref = 25;// Стоимость отправки сообщения рефералам!
 ?>
+
+<div class="s-bk-lf"><div class="acc-title">Внутреняя почта</div></div>
 
 <?
 
@@ -25,22 +19,37 @@ $cena_ref = 2;// Стоимость отправки сообщения рефералам!
 	if ($sk > 0) {$pmm = '<font color="red">('.$sk.')</font>';} else {$pmm = '<font color="red">(0)</font>';}
 	
 ?>
-<br>
+
 <div class="silver-bk"><div class="clr"></div>
 <table cellpadding='3' cellspacing='0' border='0' bordercolor='#336633' align='center' width="99%">
    <tr>
-    <td align="center" class="m-tb"><a style='color:Maroon;' href='/account/pm/'>Написать Письмо</a></td>
-    <td align="center" class="m-tb"><a style='color:Maroon;' href='/account/pm/inbox/'>Входящие<?=$pmm; ?></a></td>	
-    <td align="center" class="m-tb"><a style='color:Maroon;' href='/account/pm/outbox/'>Исходящие</a></td>
-    <td align="center" class="m-tb"><a style='color:Maroon;' href='/account/pm/referals/'>Рассылка всем рефералам</a></td>
+    <td align="center" class="m-tb"><a style='color:white;' href='/account/pm/'>Написать Письмо</a></td>
+    <td align="center" class="m-tb"><a style='color:white;' href='/account/pm/inbox/'>Входящие<?=$pmm; ?></a></td>	
+    <td align="center" class="m-tb"><a style='color:white;' href='/account/pm/outbox/'>Исходящие</a></td>
+    <td align="center" class="m-tb"><a style='color:white;' href='/account/pm/referals/'>Рассылка всем рефералам</a></td>
   </tr>
 </table>
-<hr>
-<div style="font-size: 12px">
-Для связи с администрацией используйте логин "admin"
-</div>
-<hr>
+
 <?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /////////////////////////////////////////////////############### ВХОДЯЩИЕ СООБЩЕНИЯ  ###################///////////////////////////////////////////////
 if (isset($_GET['inbox'])) {
 
@@ -70,22 +79,20 @@ if(!empty($tema1)) {
 
 if (isset($_POST['tm'])) {				
 ?>
-<br />
+
 <form method="post" action="">
 <label>Пользователь(логин)</label><br>
-<input value="<?=$_POST['log']; ?>" type="text" size="20" maxlength="15" disabled /><br>
-<input name="to_user1" value="<?=$_POST['log']; ?>" type="hidden" size="20" maxlength="15" />
-<br/>
-<label>Тема сообщения (макс.15 символов)</label><br>
-<input value="RE: <?=$_POST['tm']; ?>" type="text" size="20" maxlength="15" disabled /><br>
-<input name="tema1" value="RE: <?=$_POST['tm']; ?>" type="hidden" size="15" maxlength="15" />
-<br/>
+<input value="<?=$_POST['log']; ?>" type="text" size="20" maxlength="50" disabled /><br>
+<input name="to_user1" value="<?=$_POST['log']; ?>" type="hidden" size="20" maxlength="50" /><br>
+<label>Тема сообщения (до 150 символов)</label><br>
+<input value="RE: <?=$_POST['tm']; ?>" type="text" size="20" maxlength="150" disabled /><br>
+<input name="tema1" value="RE: <?=$_POST['tm']; ?>" type="hidden" size="20" maxlength="150" />
 <label>Текст сообщения</label><br>
-<textarea name="message1" rows="15" cols="80"></textarea>
-<br /><br />
+<textarea name="message1" rows="5" cols="40"></textarea>
+<br />
 <input type="submit" name="sendd" value="Отправить сообщение" />
 </form>
-  
+  <tr align="right"><td colspan="2"><font size="1"><a href="http://wmrush.name/" target="_blank">Powered By WmRush.name</a></font></tr>
 
 <?
 }
@@ -105,14 +112,17 @@ echo '<center>Сообщение удалено</center><br>';
 	?>
 	<br>
 <table style="border-collapse:collapse;width:100%;"><tbody><tr><td><br></td><td>
-<b>Отправитель:</b> - <?=$inn['login_out']; ?><br>
-<b>Тема:</b> - <?=$inn['theme']; ?><br>
-<b>Текст письма:</b><br>
-<hr>
+<b>Отправитель</b> - <?=$inn['login_out']; ?> | <?=date('d-m-Y - H:i', $in['date']); ?><br>
+<b>Тема</b> - <?=$inn['theme']; ?><br>
+<b>Текст письма</b><br>
 <?=$inn['text']; ?><br><br>
 
 
 <hr>
+
+
+
+
 
 </td></tr></tbody></table>
 <form method="post" action="">
@@ -121,7 +131,8 @@ echo '<center>Сообщение удалено</center><br>';
 <input type="submit" value="Ответить">
 
 </form>
-  
+  <tr align="right"><td colspan="2"><font size="1"><a href="http://wmrush.name/" target="_blank">Powered By WmRush.name</a></font></tr>
+</div><br>
 	
 	<?
 	}
@@ -131,6 +142,7 @@ echo '<center>Сообщение удалено</center><br>';
 	if($db->NumRows() == 0) {
 	echo '<center>Нет входящих сообщений</center>';
 	?>
+	  <tr align="right"><td colspan="2"><font size="1"><a href="http://wmrush.name/" target="_blank">Powered By WmRush.name</a></font></tr>
 	<?
 	
 	}
@@ -140,7 +152,7 @@ echo '<center>Сообщение удалено</center><br>';
 </td></tr></tbody></table>
 
 <table width='97%'>
-<tr bgcolor="#EEE8AA">
+<tr bgcolor="#336633">
 <td align='center'>ID</td>
 <td align='center'>Отправитель</td>
 <td align='center'>Тема</td>
@@ -149,7 +161,7 @@ echo '<center>Сообщение удалено</center><br>';
 </tr>
 
 <tr
-bgcolor="Snow">
+bgcolor="grey">
 <td align='center'>#<?=$in['id']; ?><br>
 <?
 if ($in['status'] == 0) echo '<font color="red">NEW</font>';
@@ -165,10 +177,33 @@ if ($in['status'] == 0) echo '<font color="red">NEW</font>';
 <form action="" method="post"><input type="hidden" name="id_dell_in" value="<?=$in['id']; ?>"><input type="hidden" name="del" value="yes"><input type="submit" name="outbox" value="Удалить"></form>
 </td>
 </tr>
+  <tr align="right"><td colspan="2"><font size="1"><a href="http://wmrush.name/" target="_blank">Powered By WmRush.name</a></font></tr>
 </table>
 	<?
 	}
-		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 /////////////////////////////////////////////////############### ИСХОДЯЩИЕ СООБЩЕНИЯ  ###################///////////////////////////////////////////////
 }elseif (isset($_GET['outbox'])) {
 
@@ -191,22 +226,22 @@ echo '<center>Сообщение удалено</center><br>';
 	$inn = $db->FetchArray();
 	?>
 	<br>
+<table style="border-collapse:collapse;width:100%;"><tbody><tr><td><br></td><td>
+<b>Получатель</b> - <?=$inn['login_in']; ?> | <?=date('d-m-Y - H:i', $in['date']); ?><br>
+<b>Тема</b> - <?=$inn['theme']; ?><br>
+<b>Текст письма</b><br>
+<?=$inn['text']; ?><br><br>
 
-<table width="97%">
-<tbody>
-<tr>
-<td width ="97%"
-<b>Получатель:</b> - <?=$inn['login_in']; ?><br>
-<b>Тема:</b> - <?=$inn['theme']; ?><br>
-<b>Текст письма:</b><br>
 <hr>
-<?=$inn['text']; ?>
-<br>
-<hr>
-</td>
-</tr>
-</table>
-  
+
+
+
+</td></tr>
+</tbody></table>
+  <tr align="right"><td colspan="2"><font size="1"><a href="http://wmrush.name/" target="_blank">Powered By WmRush.name</a></font></tr>
+
+</div><br>
+	
 	<?
 	}
 
@@ -215,7 +250,7 @@ echo '<center>Сообщение удалено</center><br>';
 	if($db->NumRows() == 0) {
 	echo '<center>Нет входящих сообщений</center>';
 	?>
-	  
+	  <tr align="right"><td colspan="2"><font size="1"><a href="http://wmrush.name/" target="_blank">Powered By WmRush.name</a></font></tr>
 	<?
 	}
 	while($in = $db->FetchArray()) {
@@ -223,8 +258,8 @@ echo '<center>Сообщение удалено</center><br>';
 	<table style="border-collapse:collapse;width:100%;"><tbody><tr><td><br></td><td>
 </td></tr></tbody></table>
 
-<table width="100%">
-<tr bgcolor="#EEE8AA">
+<table width='97%'>
+<tr bgcolor="#336633">
 <td align='center'>ID</td>
 <td align='center'>Получатель</td>
 <td align='center'>Тема</td>
@@ -233,7 +268,7 @@ echo '<center>Сообщение удалено</center><br>';
 </tr>
 
 <tr
-bgcolor="Snow">
+bgcolor="grey">
 <td align='center'>#<?=$in['id']; ?></td>
 <td align='center'><?=$in['login_in']; ?></td>
 <td align='center'><?=$in['theme']; ?></td>
@@ -243,9 +278,29 @@ bgcolor="Snow">
 <form action="" method="post"><input type="hidden" name="id_dell_in" value="<?=$in['id']; ?>"><input type="hidden" name="del" value="yes"><input type="submit" name="outbox" value="Удалить"></form>
 </td>
 </tr>
-  </table>
+  <tr align="right"><td colspan="2"><font size="1"><a href="http://wmrush.name/" target="_blank">Powered By WmRush.name</a></font></tr>
+</table>
 <?
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /////////////////////////////////////////////////############### СООБЩЕНИЯ РЕФЕРАЛАМ ###################///////////////////////////////////////////////
 }elseif (isset($_GET['referals'])) {
@@ -376,7 +431,7 @@ $status = 0;
 - Можно выбрать только самых активных рефералов;<br>
 - Сообщения останутся в исходящих.<br>
 <br>
-Стоимость отправки 1 сообщение 1 рефералу - 2 монеты.
+Стоимость отправки 1 сообщение 1 рефералу - 25 C.
 <br><br>
 <?
 
@@ -390,19 +445,43 @@ $status = 0;
 <option value="4">Активным в течении 7 суток [<?=$ref_data['new_users']; ?>]</option>
 <option value="5">Активным в течении месяца [<?=$ref_data['new_userss']; ?>]</option>
 </select>
-<br><br>
+<br>
 <label>Тема сообщения (до 150 символов)</label><br>
-<input name="tema" value="" type="text" size="20" maxlength="15" /><br><br>
+<input name="tema" value="" type="text" size="20" maxlength="150" /><br>
 <label>Текст сообщения</label><br>
-<textarea name="message" rows="15" cols="80"></textarea>
-<br /><br />
+<textarea name="message" rows="5" cols="40"></textarea>
+<br />
 <input type="submit" name="send" value="Разослать сообщение" />
 </form>
 </td></tr>
-  
+  <tr align="right"><td colspan="2"><font size="1"><a href="http://wmrush.name/" target="_blank">Powered By WmRush.name</a></font></tr>
+
 </tbody></table>
 
 <? 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /////////////////////////////////////////////////############### НОВОЕ СООБЩЕНИЯ  ###################///////////////////////////////////////////////
 } else { 
@@ -439,7 +518,7 @@ $login_in = $us['user'];
 
 
 ?>
-<table style="border-collapse:collapse;width:50%;">
+<table style="border-collapse:collapse;width:100%;"><tbody><tr><td><br></td><td>
 <br>
 Запрещено:<br>
 - Отправлять сообщения содержащие ненормативную лексику;<br>
@@ -447,24 +526,24 @@ $login_in = $us['user'];
 - Отправлять сообщения рекламного характера;<br>
 - Массовая отправка сообщений одного содержания.<br>
 <br>
-Стоимость отправки сообщения - 1 монета.
+Стоимость отправки сообщения - 10 C.
 <br><br>
 <form method="post" action="">
 <label>Пользователь(логин)</label><br>
-<input name="to_user" value="" type="text" size="20" maxlength="15" /><br><br>
-<label>Тема сообщения (макс.15 символов)</label><br>
-<input name="tema" value="" type="text" size="20" maxlength="15" /><br><br>
+<input name="to_user" value="" type="text" size="20" maxlength="50" /><br>
+<label>Тема сообщения (до 150 символов)</label><br>
+<input name="tema" value="" type="text" size="20" maxlength="150" /><br>
 <label>Текст сообщения</label><br>
-<textarea name="message" rows="15" cols="80"></textarea>
+<textarea name="message" rows="5" cols="40"></textarea>
 <br />
 <input type="submit" name="send" value="Отправить сообщение" />
 </form>
-</table>
+</td></tr>
+
+  <tr align="right"><td colspan="2"><font size="1"><a href="http://wmrush.name/" target="_blank">Powered By WmRush.name</a></font></tr>
+</tbody></table>
+
 <? } ?>
-        </div>
-	  </div>
-	<div class="text_pages_bottom"></div>
-	<?php include("_200x300.php");?>
-</div>
-    
-      
+</div><br>
+
+</div>	

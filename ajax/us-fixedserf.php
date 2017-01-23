@@ -28,8 +28,8 @@ if (isset($_POST['p1']))
   
   if ($db->NumRows())
   {
-    echo 'account/serfing/view/'.$id.'';
-    //echo 'account/serfing/view/'.$id.'/'.urlencode(session_id()).'';
-  } 
+    echo 'account/serfing/view/'.$id;
+  }
+
 }  
 ?>

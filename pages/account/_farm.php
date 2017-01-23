@@ -49,34 +49,19 @@ $sonfig_site = $db->FetchArray();
 
 
 ?>
-
-<table>
-<tr align="left">
-		<div style="font-size: 18px; color: #0000EE">
-Моя ферма: здесь находятся купленные вами животные!
-</tr>
-		<hr>
-		<tr align="left">
-		<div style="font-size: 12px; color: #8B1A1A">
-Вся продукция которую приносят вам ваши животные хранится в холодильнике. <br>
-Вам нужно собирать ее и перемещать на склад, вы можете делать это каждых 10 минут!<br>
-Собранную продукцию продавайте со склада и получайте доход! Старайтесь делать это каждый день! Вдруг пропадет електричество ))))))<br>
-</tr>
-	<hr>
-</div>
-</table>
-
+Вся продукция которую вам принесли ваши животные сразу попадают на склад, собирайте их и продавайте. Вы можете делать это раз в 10 мин. 
+Продукция постоянно накапливаются и хранятся в холодильнике, вы можете собирать их даже раз в день, как вам удобнее.
 <div class="clear"></div>
 <div class="shop">
 	<div class="block">
-		<div class="block_name"></span>Животное: Курица / Доходность динамическая!</div>
+		<div class="block_name"></span>Животное: Курица</div>
 		<div style="margin-top: -5px;" class="block_list"><ul class="block_ul">
 		<li>Продуктивность: <b><?=$sonfig_site["a_in_h"]; ?></b> в час</li>
 		<li>Куплено: <b><?=$user_data["a_t"]; ?></b> шт.</li>
 		<li>
-		Продукции в холодильнике: <span style="font-size: 15px;"><b>
+		Продукции: <span style="font-size: 22px;"><b>
 		<?=$func->SumCalc($sonfig_site["a_in_h"], $user_data["a_t"], $user_data["last_sbor"]);?>
-		</b></span>яиц
+		</b></span> яиц
 		</li>
 		</ul>
 		</div>
@@ -87,14 +72,14 @@ $sonfig_site = $db->FetchArray();
 
 <div class="shop">
 	<div class="block">
-		<div class="block_name"></span>Животное: Свинья / Доходность 18% в месяц</div>
+		<div class="block_name"></span>Животное: Свинья</div>
 		<div style="margin-top: -5px;" class="block_list"><ul class="block_ul">
 		<li>Продуктивность: <b><?=$sonfig_site["b_in_h"]; ?></b> в час</li>
 		<li>Куплено: <b><?=$user_data["b_t"]; ?></b> шт.</li>
 		<li>
-		Продукции в холодильнике: <span style="font-size: 15px;"><b>
+		Продукции: <span style="font-size: 22px;"><b>
 		<?=$func->SumCalc($sonfig_site["b_in_h"], $user_data["b_t"], $user_data["last_sbor"]);?>
-		</b></span>мяса
+		</b></span> мясо
 		</li>
 		</ul>
 		</div>
@@ -105,14 +90,14 @@ $sonfig_site = $db->FetchArray();
 
 <div class="shop">
 	<div class="block">
-		<div class="block_name"></span>Животное: Овца / Доходность 21.6% в месяц</div>
+		<div class="block_name"></span>Животное: Овца</div>
 		<div style="margin-top: -5px;" class="block_list"><ul class="block_ul">
 		<li>Продуктивность: <b><?=$sonfig_site["c_in_h"]; ?></b> в час</li>
 		<li>Куплено: <b><?=$user_data["c_t"]; ?></b> шт.</li>
 		<li>
-		Продукции в холодильнике: <span style="font-size: 15px;"><b>
+		Продукции: <span style="font-size: 22px;"><b>
 		<?=$func->SumCalc($sonfig_site["c_in_h"], $user_data["c_t"], $user_data["last_sbor"]);?>
-		</b></span>шерсти
+		</b></span> меха
 		</li>
 		</ul>
 		</div>
@@ -123,14 +108,14 @@ $sonfig_site = $db->FetchArray();
 
 <div class="shop">
 	<div class="block">
-		<div class="block_name"></span>Животное: Коза / Доходность 25.2% в месяц</div>
+		<div class="block_name"></span>Животное: Коза</div>
 		<div style="margin-top: -5px;" class="block_list"><ul class="block_ul">
 		<li>Продуктивность: <b><?=$sonfig_site["d_in_h"]; ?></b> в час</li>
 		<li>Куплено: <b><?=$user_data["d_t"]; ?></b> шт.</li>
 		<li>
-		Продукции в холодильнике: <span style="font-size: 15px;"><b>
+		Продукции: <span style="font-size: 22px;"><b>
 		<?=$func->SumCalc($sonfig_site["d_in_h"], $user_data["d_t"], $user_data["last_sbor"]);?>
-		</b></span>молока
+		</b></span> молоко козы
 		</li>
 		</ul>
 		</div>
@@ -141,14 +126,14 @@ $sonfig_site = $db->FetchArray();
 
 <div class="shop">
 	<div class="block">
-		<div class="block_name"></span>Животное: Корова / Доходность 28.8% в месяц</div>
+		<div class="block_name"></span>Животное: Корова</div>
 		<div style="margin-top: -5px;" class="block_list"><ul class="block_ul">
 		<li>Продуктивность: <b><?=$sonfig_site["e_in_h"]; ?></b> в час</li>
 		<li>Куплено: <b><?=$user_data["e_t"]; ?></b> шт.</li>
 		<li>
-		Продукции в холодильнике: <span style="font-size: 15px;"><b>
+		Продукции: <span style="font-size: 22px;"><b>
 		<?=$func->SumCalc($sonfig_site["e_in_h"], $user_data["e_t"], $user_data["last_sbor"]);?>
-		</b></span>молока 
+		</b></span> молоко коровы
 		</li>
 		</ul>
 		</div>
@@ -158,10 +143,9 @@ $sonfig_site = $db->FetchArray();
 </div>
 
 <form action="" method="post">
-<center><input type="submit" name="sbor" value="Собрать с холодильника на склад" style="height:30px;"/></center>
+<center><input type="submit" name="sbor" value="Собрать все" style="height:30px;"/></center>
 </form>
 
 </div>
 <div class="text_pages_bottom"></div>
-<?php include("_200x300.php");?>
 </div>	

@@ -45,7 +45,7 @@ if(isset($_POST['pay'])) {
 		</div>
 	</form>
 <script type="text/javascript">
-var min = 5;
+var min = 1;
 var ser_pr = <?=$persent;?>;
 function calculate(st_q) {
     
@@ -61,13 +61,12 @@ function calculate(st_q) {
         $('#sum').val(sum);
     }
     if (sum < min) {
-        $('#error').html('Сумма должна быть больше или равна '+min);
+        $('#error').html('Сумма должна быть больше '+min);
 		$('#error').css("display","block");
 		$('#submit').attr("disabled", "disabled");
         return false;
     } else {
         $('#error').html('');
-		$('#submit').removeAttr('disabled');
 		$('#error').css("display","none");
     }
 
@@ -132,7 +131,7 @@ $rest = substr(htmlspecialchars($_POST['method']), 3);
 <div class="text_pages_bottom"></div>
 </div>
 <script type="text/javascript">
-var min = 5;
+var min = 1;
 var ser_pr = <?=$persent;?>;
 function calculate(st_q) {
     
@@ -148,7 +147,7 @@ function calculate(st_q) {
         $('#oa').val(sum);
     }
     if (sum < min) {
-        $('#error').html('Сумма должна быть больше или равна '+min);
+        $('#error').html('Сумма должна быть больше '+min);
 		$('#error').css("display","block");
 		$('#submit').attr("disabled", "disabled");
         return false;
@@ -167,7 +166,7 @@ function calculate(st_q) {
 calculate(100);	
 </script>
 <?php } else { ?>
-<div class='err'>Этот вид пополнения в данный момент недоступен! Обратитесь к администратору!</div>
+<div class='err'>Выберите метод платежа!</div>
 </div>
 <div class="text_pages_bottom"></div>
 </div>
@@ -232,23 +231,12 @@ $sign = strtoupper(hash('sha256', implode(":", $arHash)));
 return;
 }
 ?>
-
-<h2>Текущие акции!</h2>
-<table>	
-   <tr align="left">
-		<div style="font-size: 15px; color: #1C1C1C">
-• Первое пополнение +500 золота на счет для покупок!<BR/><BR/>
-</div>
-</table>
-
+<div class="title aligncenter">К первому пополнению от 10 руб. получаете 10% бонус!</div>
 	<div class="s_divide"></div>
 	<div class="clear"></div>
 	<div class="line_divider"></div>
 <center>    
-	<div class="already_got">Пополнение через <a target="_blank" href="http://payeer.com/01350612" class="tips" original-title="Перейти на сайт">Payeer Merchant</a><br/>
-	Минимальная сумма пополнения 5 рублей!<br/>
-	Перед пополнением убедитесь что вы собрали всю продукцию на ферме!
-	</div>
+	<div class="already_got">Пополнение через <a target="_blank" href="http://payeer.com/01350612" class="tips" original-title="Перейти на сайт">Payeer Merchant</a></div>
 </center>
 <div class="line_divider"></div>
 
@@ -307,31 +295,14 @@ return;
 		</div>
 	</label>
 	<form method="post" action="">
-		<input type="hidden" name="method" value="WebMoney">
-		<input type="submit" class="p_button" name="pay" value="WebMoney">
+		<input type="hidden" name="method" value="liqpay">
+		<input type="submit" class="p_button" name="pay" value="Liqpay">
 	</form>
-	
 </div>
-
 <div class="clear"></div>
 <div class="s_divide"></div>
-<hr> 
-
-</tr>
-
-   <tr align="left">
-		<div style="font-size: 15px; color: #FF0000"><br>
-В данный момент автоматическое пополнение WebMoney недоступно! Мы работаем над этим!</div><br>
-        <div style="font-size: 12px; color: #1C1C1C"><br>
-Если вы хотите пополнить ваш баланс, в вашем акаунте WebMoney, делаете перевод желаемой суммы на кошелек R160290313544!<br>
-В примечании !!!!! обязательно указываете: ваш логин!!!<br><br>
-Здесь по внутренней почте пишете письмо пользователю admin. В письме указываете ваш логин и какую сумму отправили! После оплаты счета ваш баланс будет пополнен с учетом текущих акций или бонусов!<br>
-</div>
-</table>
-		</tr>
-
+<div class="line_divider"></div>
 
 </div>
 <div class="text_pages_bottom"></div>
-<?php include("_200x300.php");?>
 </div>

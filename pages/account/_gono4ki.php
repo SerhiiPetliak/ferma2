@@ -1,15 +1,12 @@
 <div class="text_right">
 <div class="text_pages_top"></div>
-<div class="text_pages_content"> 
- <?php include("link_s.php");?>
+<div class="text_pages_content">  
 <div class="" style="padding-top:0px;">
-	<center><b>Гонки машин</b></center><BR />
-ВНИМАНИЕ: Игра проводится со счета для покупок! <BR />
-<p>Суть игры очень проста <BR />
+	<center><b>Гонки машин</b></center>
+
+Суть игры очень проста <BR />
 Необходимо угадать какая машина выиграет гонку!<BR />
-В случае выигрыша ваша ставка увеличивается в 2 раза и зачисляется на баланс!
-<div style="font-size: 12px; color: #FF0000">
-		Напоминаем что данная игра относится к категории азартных и может привести к потере ваших денег</div>
+В случае выигрыша ваша ставка увеличивается в 2 раза и зачисляется на баланс для покупок!
 <BR /><BR />
 <center>
 <?PHP
@@ -114,12 +111,6 @@ if ($win == 1 and $naper == 3) {
 
 </center>
 <table cellpadding='3' cellspacing='0' border='0' bordercolor='#336633' align='center' width="99%">
-<tr><br><br>
-  <div style="font-size: 18px; color: #006400">
-  Это может быть интересно:</div>
-<br>
-<center><div id="linkslot_144544"><script src="https://linkslot.ru/bancode.php?id=144544" async></script></div></center>
-<br>
   <tr>
     <td colspan="5" align="center"><h1>Ваши последние игры</h1></td>
     </tr>
@@ -165,5 +156,4 @@ if ($win == 1 and $naper == 3) {
 </div>
 </div>
 <div class="text_pages_bottom"></div>
-<?php include("_200x300.php");?>
 </div>

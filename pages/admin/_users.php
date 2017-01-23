@@ -88,23 +88,23 @@ $data = $db->FetchArray();
   
   
   <tr bgcolor="#efefef">
-    <td style="padding-left:10px;">собрано(курица):</td>
+    <td style="padding-left:10px;">ќвощей на балансе (Ћайм):</td>
     <td width="200" align="center"><?=$data["a_b"]; ?></td>
   </tr>
   <tr>
-    <td style="padding-left:10px;">собрано (свинь€):</td>
+    <td style="padding-left:10px;">ќвощей на балансе (¬ишн€):</td>
     <td width="200" align="center"><?=$data["b_b"]; ?></td>
   </tr>
   <tr bgcolor="#efefef">
-    <td style="padding-left:10px;">собрано (овца):</td>
+    <td style="padding-left:10px;">ќвощей на балансе ( лубника):</td>
     <td width="200" align="center"><?=$data["c_b"]; ?></td>
   </tr>
   <tr>
-    <td style="padding-left:10px;">собрано(коза):</td>
+    <td style="padding-left:10px;">ќвощей на балансе ( иви):</td>
     <td width="200" align="center"><?=$data["d_b"]; ?></td>
   </tr>
   <tr bgcolor="#efefef">
-    <td style="padding-left:10px;">собрано (корова):</td>
+    <td style="padding-left:10px;">ќвощей на балансе (јпельсин):</td>
     <td width="200" align="center"><?=$data["e_b"]; ?></td>
   </tr>
   

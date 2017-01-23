@@ -132,6 +132,5 @@ if(isset($_SESSION["user_id"])){ Header("Location: /account"); return; }
 
 </div>
 <div class="text_pages_bottom"></div>
-<?php include("_200x300.php");?>
 </div>
 </div>

@@ -259,9 +259,6 @@ function payselect(id) {
     <center>
         <a href="/account/serfing/add" class="button-green-big" style="margin-top:10px">Разместить ссылку</a>
     </center>
-	<center>
-	После оплаты баланса ссылки не забудьте включить показы!!!
-	</center><BR/>
  <?php
 
  if (isset($_POST['delete']))
@@ -400,6 +397,5 @@ function payselect(id) {
 
     </div>
     <div class="text_pages_bottom"></div>
-	<?php include("_200x300.php");?>
 </div>
 

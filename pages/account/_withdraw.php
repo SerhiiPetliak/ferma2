@@ -143,8 +143,7 @@ function manualPay($db, $usname, $usid, $purse, $sum, $sonfig_site){
 		$val = "RUB";
 
 
-		  if(($purse[0] == "P") && (strlen($purse) == 9 || strlen($purse) == 8)){
-			  
+		if(($purse[0] == "P") && (strlen($purse) == 9 || strlen($purse) == 8)){
 
 			// ѕровер€ем на существующие за€вки
 			$db->Query("SELECT * FROM db_payment WHERE user_id = '$usid' AND (status = '0' OR status = '1') ORDER BY id ");
@@ -164,7 +163,7 @@ function manualPay($db, $usname, $usid, $purse, $sum, $sonfig_site){
 							echo autoPay($config, $sum, $sonfig_site, $purse, $db, $usname, $usid);
 						}else{
 							manualPay($db, $usname, $usid, $purse, $sum, $sonfig_site);
-							$_SESSION["pay_error"] = "<center><b><font color ='red'>ћаксимальна€ сумма дл€ автоматическо выплаты составл€ет {$maxPay} монет! ¬аша за€вка прин€та и будет обработана в ручном режиме!</font></b></center><BR />";
+							$_SESSION["pay_error"] = "<center><b><font color ='red'>ћаксимальна€ сумма дл€ выплаты составл€ет {$maxPay} монет! ¬аша за€вка прин€та и будет обработана в ручном режиме!</font></b></center><BR />";
 						}
 					}else{
 						if($gone_time < 86400){
@@ -175,7 +174,7 @@ function manualPay($db, $usname, $usid, $purse, $sum, $sonfig_site){
 								echo autoPay($config, $sum, $sonfig_site, $purse, $db, $usname, $usid);
 							}else{
 								manualPay($db, $usname, $usid, $purse, $sum, $sonfig_site);
-								$_SESSION["pay_error"] = "<center><b><font color ='red'>ћаксимальна€ сумма дл€ автовыплаты составл€ет {$maxPay} монет! ¬аша за€вка прин€та и будет обработана в ручном режиме!</font></b></center><BR />";
+								$_SESSION["pay_error"] = "<center><b><font color ='red'>ћаксимальна€ сумма дл€ выплаты составл€ет {$maxPay} монет! ¬аша за€вка прин€та и будет обработана в ручном режиме!</font></b></center><BR />";
 							}
 						}
 					}
@@ -188,7 +187,7 @@ function manualPay($db, $usname, $usid, $purse, $sum, $sonfig_site){
 			}
 
 		}else{
-			$_SESSION["pay_error"] = "<center><b><font color ='red'> ошелек Payeer указан неверно!</font></b></center><BR />";
+			$_SESSION["pay_error"] = "<center><b><font color ='red'> ошелек Payeer указан неверно! —мотрите образец!</font></b></center><BR />";
 		}
 
 		header("Location: ".$_SERVER["REQUEST_URI"]);
@@ -221,7 +220,7 @@ function manualPay($db, $usname, $usid, $purse, $sum, $sonfig_site){
 	</div>
 	<div class="webmoney_right">
 		Payeer представл€ет собой универсальный платЄжный портал, зарегистрировавшись на котором, пользователь получает доступ к широкому спектру возможностей.  
-		ќплата оказываемых в интернете услуг, перевод денег по всему миру (как внутри самой системы, так и на внешние счета), 
+		ѕлатежна€ система Payeer  ќплата оказываемых в интернете услуг, перевод денег по всему миру (как внутри самой системы, так и на внешние счета), 
 		обмен электронных валют или вывод с виртуальных кошельков на карточку &mdash; это лишь мала€ часть возможностей, которые предоставл€ет Payeer.
 	</div>
 <script language="javascript">PaymentSum(); SetVal();</script>
@@ -233,7 +232,7 @@ function manualPay($db, $usname, $usid, $purse, $sum, $sonfig_site){
     <td colspan="5" align="center"><h4>ѕоследние 10 выплат</h4></td>
     </tr>
   <tr>
-    <td align="center" class="m-tb">«олото</td>
+    <td align="center" class="m-tb">—еребро</td>
     <td align="center" class="m-tb">ѕолучаете</td>
 	<td align="center" class="m-tb"> ошелек</td>
 	<td align="center" class="m-tb">ƒата</td>
@@ -267,5 +266,4 @@ function manualPay($db, $usname, $usid, $purse, $sum, $sonfig_site){
 </table>	
 </div>
 <div class="text_pages_bottom"></div>
-<?php include("_200x300.php");?>
 </div>

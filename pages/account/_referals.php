@@ -9,27 +9,30 @@ $refs = $db->FetchRow();
 <div class="text_pages_top"></div>
 <div class="text_pages_content">
 <div class="s_divide"></div>
-<div style="font-size: 18px; color: #0000EE">
-<a href="/polezno.html" class="tips" original-title="Правила и условия участия в партнеской программе">Правила и условия участия в партнеской программе >>></a>
-</div><br>
 
-        <div class="title_r">Ваши рекламные материалы:</div>
+         <div class="title_r">Ваша реферальная ссылка</div>
+         <div class="text">
+            Приглашайте в игру своих друзей и знакомых, Вы будете получать 10% от каждого пополнения баланса, от просмотра серфинга и выполнений заданий, приглашенным Вами человеком. 
+			Доход ни чем не ограничен. <BR/>
+			Даже несколько приглашенных могут принести вам более 100 000 Золота. 
+			Ниже представлена ссылка для привлечения и количество приглашенных Вами.
+         </div>
          <div class="clear"></div>  
          <div class="s_divide"></div>
           
-         <input class="input_text w340" value="https://<?=$_SERVER['HTTP_HOST']; ?>/?i=<?=$_SESSION["user_id"]; ?>"/>
+         <input class="input_text w340" value="http://<?=$_SERVER['HTTP_HOST']; ?>/?i=<?=$_SESSION["user_id"]; ?>"/>
              <div class="s_divide"></div>
              <div class="title_r">Ваши реферальные баннеры:</div>
                 <div class="input_wrap_b">
                     <label>Баннер 728x90</label>
-                    <img src="https://<?=$_SERVER['HTTP_HOST']; ?>/images/promo/728.png" class="banner_preview1"/>
+                    <img src="http://<?=$_SERVER['HTTP_HOST']; ?>/images/promo/728.png" class="banner_preview1"/>
                     <input onclick="this.select()" class="input_text w340 banner_ref" readonly value='<a href="http://<?=$_SERVER['HTTP_HOST']; ?>/?i=<?=$_SESSION["user_id"]; ?>" target=_blank><img src="http://<?=$_SERVER['HTTP_HOST']; ?>/images/promo/728.png" alt="Mr.Farmer - зарабатывайте деньги на своем сельском хозяйстве!"></a>'/>
                 </div>
                 
                 
 <div class="input_wrap_b">
                     <label>Баннер 200x300</label>
-                    <img src="https://<?=$_SERVER['HTTP_HOST']; ?>/images/promo/300.gif" class="banner_preview3"/>
+                    <img src="http://<?=$_SERVER['HTTP_HOST']; ?>/images/promo/300.gif" class="banner_preview3"/>
                     <input onclick="this.select()" class="input_text w340 banner_ref" readonly value='<a href="http://<?=$_SERVER['HTTP_HOST']; ?>/?i=<?=$_SESSION["user_id"]; ?>" target=_blank><img src="http://<?=$_SERVER['HTTP_HOST']; ?>/images/promo/300.gif" alt="Mr.Farmer - зарабатывайте деньги на своем сельском хозяйстве!"></a>'/>
                 </div>
 
@@ -37,7 +40,7 @@ $refs = $db->FetchRow();
 
             <div class="input_wrap_b">
                     <label>Баннер 468x60</label>
-                    <img src="https://<?=$_SERVER['HTTP_HOST']; ?>/images/promo/468.png" class="banner_preview2"/>
+                    <img src="http://<?=$_SERVER['HTTP_HOST']; ?>/images/promo/468.png" class="banner_preview2"/>
                     <input onclick="this.select()" class="input_text w340 banner_ref" readonly value='<a href="http://<?=$_SERVER['HTTP_HOST']; ?>/?i=<?=$_SESSION["user_id"]; ?>" target=_blank><img src="http://<?=$_SERVER['HTTP_HOST']; ?>/images/promo/468.png" alt="Mr.Farmer - зарабатывайте деньги на своем сельском хозяйстве!"></a>'/>
                 </div>
                 
@@ -82,6 +85,5 @@ $refs = $db->FetchRow();
 <div class="s_divide"></div>
 </div>
 <div class="text_pages_bottom"></div>
-<?php include("_200x300.php");?>
 </div>
     

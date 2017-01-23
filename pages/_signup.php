@@ -46,7 +46,7 @@ $referer_id = (isset($_COOKIE["i"]) AND intval($_COOKIE["i"]) > 0 AND intval($_C
 						$_SESSION["referer_id"] = $log_data["referer_id"];
 						Header("Location: /account.html");
 						
-		}else echo "<div class='err'>Аккаунт заблокирован. Причина: Создание мультиакаунта! Если это произошло по ошибке обратитесь к администратору!</div>";
+		}else echo "<div class='err'>Аккаунт заблокирован</div>";
 		}else echo "<div class='err'>Пароль указан неверно</div>";
 		}else echo "<div class='err'>Указанный пользователь не зарегистрирован в системе</div>";
 		}else echo "<div class='err'>Email указан неверно</div>";
@@ -68,7 +68,7 @@ $referer_id = (isset($_COOKIE["i"]) AND intval($_COOKIE["i"]) > 0 AND intval($_C
 	$email = $func->IsMail($_POST["email"]);
 	
 		if($rules){
-		if($ipregs == 0) {
+		//if($ipregs == 0) {
 			if($login !== false){
 			if($email !== false){
 		
@@ -87,7 +87,7 @@ $referer_id = (isset($_COOKIE["i"]) AND intval($_COOKIE["i"]) > 0 AND intval($_C
 						VALUES ('$login','$email','$passmd','$referer_name','$referer_id','$time',INET_ATON('$ip'))");
 						
 						$lid = $db->LastInsert();
-                        $db->Query("INSERT INTO `db_users_b` (`id`, `user`, `money_b`)  VALUES ('$lid', '$login', '0')"); 
+                        $db->Query("INSERT INTO `db_users_b` (`id`, `user`, `money_b`)  VALUES ('$lid', '$login', '100')"); 
 
 						# Вставляем статистику
 						$db->Query("UPDATE `db_stats` SET `all_users` = all_users + 1 WHERE `id` = '1'");
@@ -102,16 +102,12 @@ $referer_id = (isset($_COOKIE["i"]) AND intval($_COOKIE["i"]) > 0 AND intval($_C
 				}else echo "<div class='err'>Пароль заполнен неверно!</div>";
 				}else echo "<div class='err'>E-mail заполнен неверно!</div>";
 				}else echo "<div class='err'>Логин заполнен неверно!</div>";
-				}else echo "<div class='err'>Данный пользователь уже существует или с этого ip уже была регистрация!</div>";
+				//}else echo "<div class='err'>Данный пользователь уже существует или с этого ip уже была регистрация!</div>";
 				}else echo "<div class='err'>Вы не подтвердили правила!</div>";
 
 	}
 ?>
 
-<div style="font-size: 12px">
-Проверяйте адрес сайта перед входом <b style="font-size: 16px; color: Orange">"mr-farmer.biz"</b><br>
-Мы не имеем никакого отношения к сайтам с подобным дизайном и другими доменными именами!</div>
-<hr>
 <div class="narrow">
 <div class="title_r">Вход</div>
 <form name="loginform" action="/signup.html" method="post">
@@ -123,8 +119,6 @@ $referer_id = (isset($_COOKIE["i"]) AND intval($_COOKIE["i"]) > 0 AND intval($_C
 </form>
 <div class="terms_main">
 <label for="terms"><a href="/recovery.html">Забыли пароль?</a></label>
-<hr>
-						<div style="font-size: 12px; color: #228B22">После входа на сайт не забывайте читать раздел "Новости", и будьте всегда в курсе происходящего на сайте!</div>
 </div>
 </div>
 
@@ -140,8 +134,6 @@ $referer_id = (isset($_COOKIE["i"]) AND intval($_COOKIE["i"]) > 0 AND intval($_C
 <div class="clear"></div>
 <div class="terms_main">
 <input type="checkbox" name="rules"/> <label for="terms">Я прочитал и соглашаюсь с <a href="/rules" target="_blank">условиями</a> использования сайта</label>
-<hr>
-						<div style="font-size: 12px; color: #CD5C5C">Внимание! Создание мультиаккаунтов повлечет за собой удаление таковых без предупреждения, без возврата средств и возможности востановления!</div>
 </div>
 <input type="submit" class="subm_button" value="Регистрация" name="singup"/>
 
@@ -151,7 +143,6 @@ $referer_id = (isset($_COOKIE["i"]) AND intval($_COOKIE["i"]) > 0 AND intval($_C
 </div>
 </div>
 <div class="text_pages_bottom"></div>
-<?php include("_200x300.php");?>
 </div>
 
 

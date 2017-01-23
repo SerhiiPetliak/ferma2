@@ -3,6 +3,9 @@
 //ini_set('display_errors', 1);
 /*
  * Серфинг для фермы
+ * Версия: 1.00
+ * SKYPE: sereega393
+ * Использование без оплаты ЗАПРЕЩЕНО!!!
 */
 define('TIME', time());
 
@@ -137,16 +140,14 @@ function fixed(p1, p2, p3)
     <div class="text_pages_top"></div>
     <div class="text_pages_content">
 
-    <br>
-   <div class="silver-bk">
-    <center> <p style="text-align: center;" "padding: 10px;"><div id="linkslot_144544"><script src="https://linkslot.ru/bancode.php?id=144544" async></script></div></p></center>
-</div>
-<link rel="stylesheet" href="/style/main.css" type="text/css" />
+    <link rel="stylesheet" href="/style/main.css" type="text/css" />
+    <!--<div class="s-bk-lf">
+        <div class="acc-title9">Серфинг</div>
+    </div>-->
     <div class="silver-bk">
-     <p style="text-align: center;">Зарабатывай просматривая сайты рекламодателей</p>
+     <p style="text-align: center;">Зарабатывай, просматривая сайты рекламодателей</p>
         <center><a href="/account/serfing/add" class="button-green-big button-green-big-new" style="margin-top:10px;">Разместить ссылку</a>&nbsp;<a href="/account/serfing/cabinet" class="button-green-big button-green-big-new" style="margin-top:10px;">Мои ссылки</a></center>
-    	 <hr>
-	<table class="work-serf"><br>
+     <table class="work-serf">
       <?php
       $db->query("SELECT ident, time_add FROM db_serfing_view WHERE user_id = '".$_SESSION['user_id']."' and time_add + INTERVAL 24*60*60 SECOND > NOW()");
 
@@ -225,7 +226,7 @@ function fixed(p1, p2, p3)
            </td>
            <td class="normal" nowrap="nowrap" valign="top" style="width: 60px; text-align: right; padding-right: 10px;">
             <span class="smoolgray" title="Осталось визитов">(<?php echo (int)($row['money']/$row['price']); ?>)</span>&nbsp;<span class="clickprice"><?php echo $pay_user; ?>&nbsp;монет</span><br />
-            <?php if (isset($_SESSION['admin'])) { ?><a class="workcomp" href="/account/serfing/delete/<?php echo $row['id']; ?>" title="Удалить ссылку и вернуть деньги"></a><?php } ?>
+            <?php// if (isset($_SESSION['admin'])) { ?><!--<a class="workcomp" href="/account/serfing/delete/<?php// echo $row['id']; ?>" title="Удалить ссылку и вернуть деньги"></a>--><?php// } ?>
             <!--a class="workevents" href="/account/wall/<?php echo $row['user_name']; ?>" title="Рекламодатель" target="_blank"></a-->
             <!--<a class="workvir" href="http://online.us.drweb.com/result/?url=<?php// echo $row['url']; ?>" title="Проверить ссылку на вирусы" target="_blank"></a>-->
            </td>
@@ -238,17 +239,12 @@ function fixed(p1, p2, p3)
 
       }
       ?>
-	  <a href="/bad_bot/black_list.php"><img src="/bad_bot/pixel.gif" border="0" alt="" width="1" height="1"></a><br>
      </table>
-</div><br>	
-<div id="linkslot_144545" style="margin: 5px 0;"><script src="https://linkslot.ru/lincode.php?id=144545" async></script></div>
-<br>
-<button><a href="https://linkslot.ru/link.php?id=144545" target="_blank">Купить ссылку здесь за <span id="linprice_144545"></span> руб.</a></button>
 
+    </div>
 
 
     </div>
     <div class="text_pages_bottom"></div>
-	<?php include("_200x300.php");?>
 </div>
  	

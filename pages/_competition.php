@@ -6,7 +6,6 @@ $_OPTIMIZATION["keywords"] = "Конкурс, конкурс рефералов";
 <div class="text_right">
 <div class="text_pages_top"></div>
 <div class="text_pages_content">  
-
 <div class="" style="padding-top:0px;">
 	<center><b>Конкурс рефералов</b></center><br>	
 <center><a href="/competition" class="stn">Текущие конкурсы</a> || <a href="/competition/list" class="stn">Завершенные</a></center><BR />
@@ -73,15 +72,15 @@ $db->Query("SELECT * FROM db_competition WHERE status = 0 LIMIT 1");
 if($db->NumRows() == 1){
 $comp = $db->FetchArray();	
 	?>
-Конкурс рефералов № <?=$comp["id"]; ?> с общим призовым фондом <?=$comp["1m"]+$comp["2m"]+$comp["3m"]; ?> RUB<BR /><BR />
+<b>Конкурс рефералов № <?=$comp["id"]; ?> с общим призовым фондом <?=$comp["1m"]+$comp["2m"]+$comp["3m"]; ?> RUB<BR /><BR />
 Старт конкурса: <?=date("d.m.Y в H:i:s", $comp["date_add"]); ?> <BR />Завершение: <?=date("d.m.Y в H:i:s", $comp["date_end"]); ?>
 <BR /><BR />
 <u>Призовые места:</u><BR />
 1 - <?=$comp["1m"]; ?> RUB <BR />
 2 - <?=$comp["2m"]; ?> RUB <BR />
 3 - <?=$comp["3m"]; ?> RUB <BR /><BR />
-<b>
-В конкурсе учитываются только активные рефералы, которые зарегистрировались после запуска конкурса. <BR />За каждое пополнение баланса Вашим рефералом Вам начисляются баллы, 1 RUB = 1 баллу. Чем больше баллов, тем больше шанс победить в конкурсе. <BR />Призы выигранные в конкурсе начисляются на счет для вывода!<BR /><BR />
+
+В конкурсе учитываются только активные рефералы, которые зарегистрировались после запуска конкурса. <BR />За каждое пополнение баланса Вашим рефералом Вам начисляются баллы, 1 RUB = 1 баллу. Чем больше баллов, тем больше шанс победить в конкурсе. <BR /><BR />
 </b>
 	<?PHP
 	
@@ -123,11 +122,7 @@ $comp = $db->FetchArray();
 }else echo "<center><b><font color = 'red'>В данный момент конкурс не проводится</font></b></center><BR />";
 
 ?>
- 
 </div>
-
-      </div>
-    <div class="text_pages_bottom"></div>
-	<?php include("_200x300.php");?>
 </div>
-
+<div class="text_pages_bottom"></div>
+</div>

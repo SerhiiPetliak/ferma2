@@ -28,19 +28,10 @@ if(isset($_POST['contact'])){
 <?php if(!empty($mess)) foreach($mess as $item) { echo $item; }?>	
 <div style="padding-top:10px;" class="text">
 <div class="title_r">Связь с нами</div>
-<div style="font-size: 14px; color: #8B4513;">
 Если возникнут какие-либо проблемы или вопросы об игре, мы с радостью ответим Вам. 
 Если у Вас есть предложения, которые сделают игру еще более интересной, присылайте, и если нам понравится, 
-Вы получите хороший бонус от нас. <br>
-При отправке сообщения обязательно указывайте ваш логин на сайте!<br> <br>
-Если ваш вопрос касается невозможности входа на сайт, утере пароля, помощи для востановления; письмо присланное нам должно быть отправленно с адреса указанного при регистрации!
-</div>  <br>
-<div style="font-size: 12px; color: #FF0000;">
-Для быстрой связи с администрацией зарегистрируйтесь и через внутреннюю почту пишите пользователю с логином "admin"
-</div>
-
+Вы получите хороший бонус от нас. 
 <div class="s_divide"></div>
-<div class="already_got">Форум: <a href="/forum/viewforum.php?f=29" style="margin-top:10px;">Общение с администратором</a></div>
 <div class="already_got">Наш E-mail: <a href="mailto:support@mr-farmer.biz">support@mr-farmer.biz</a></div>
 <div class="already_got">Мы Вконтакте: http://vk.com/mrfarmer<a href="http://vk.com/mrfarmer"></a></div>
 <div class="clear"></div>
@@ -67,5 +58,4 @@ if(isset($_POST['contact'])){
 </div>
 </div>
 <div class="text_pages_bottom"></div>
-<?php include("_200x300.php");?>
 </div>

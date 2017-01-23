@@ -3,14 +3,17 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 /*
  * Серфинг для фермы
+ * Версия: 1.00
+ * SKYPE: sereega393
+ * Использование без оплаты ЗАПРЕЩЕНО!!!
 */
 define('TIME', time());
 
-define('SERF_PRICE', 4); //минимальная стоимость просмотра
-define('SERF_PRICE_TIMER', 0.5); //стоимость таймера
-define('SERF_PRICE_MOVE', 0.5); //стоимость последующего перехода на сайт
+define('SERF_PRICE', 10); //минимальная стоимость просмотра
+define('SERF_PRICE_TIMER', 0.2); //стоимость таймера
+define('SERF_PRICE_MOVE', 0.8); //стоимость последующего перехода на сайт
 define('SERF_PRICE_HIGH', 0.5); //стоимость выделения ссылки
-define('SERF_PRICE_TARGET', 0.5); //стоимость таргетинга
+define('SERF_PRICE_TARGET', 1.2); //стоимость таргетинга
 
 
 header("Content-Type: text/html; charset=windows-1251");
@@ -393,7 +396,7 @@ function number_format(number, decimals, dec_point, thousands_sep) {
         <li>сайты, которые неоправданно долго загружаются, вследствие слабого хостинга или обилия скрытых партнёрок</li>
         <li>ресурсы, нарушающие законодательство РФ</li>
     </ul>
-    <p style="color: red; font-weight: bold;">В случаях не выполнения правил ссылка будет удалена без предупреждения и возмещения убытков.</p>
+    <p style="color: red; font-weight: bold;">В случаях не выполнения правил БАН аккаунта без предупреждения и возмещения убытков.</p>
 
  <div id="entermsg"><?php if (!empty($msg)) { echo $msg; } ?></div>
 
@@ -427,10 +430,10 @@ function number_format(number, decimals, dec_point, thousands_sep) {
                 <td class="value">
                     <select class="val" name="ask_timer" onChange="PlanChange(this.form); return false;">
                         <option value="20">20 секунд</option>
-                        <option value="30">30 секунд&nbsp;&nbsp;(+ <?php echo SERF_PRICE_TIMER; ?> монет.)</option>
-                        <option value="40">40 секунд&nbsp;&nbsp;(+ <?php echo SERF_PRICE_TIMER*2; ?> монет.)</option>
-                        <option value="50">50 секунд&nbsp;&nbsp;(+ <?php echo SERF_PRICE_TIMER*3; ?> монет.)</option>
-                        <option value="60">60 секунд&nbsp;&nbsp;(+ <?php echo SERF_PRICE_TIMER*4; ?> монет.)</option>
+                        <option value="30">30 секунд&nbsp;&nbsp;(+ <?php echo SERF_PRICE_TIMER; ?> сер.)</option>
+                        <option value="40">40 секунд&nbsp;&nbsp;(+ <?php echo SERF_PRICE_TIMER*2; ?> сер.)</option>
+                        <option value="50">50 секунд&nbsp;&nbsp;(+ <?php echo SERF_PRICE_TIMER*3; ?> сер.)</option>
+                        <option value="60">60 секунд&nbsp;&nbsp;(+ <?php echo SERF_PRICE_TIMER*4; ?> сер.)</option>
                     </select>
                 </td>
                 <td class="service"></td>
@@ -440,7 +443,7 @@ function number_format(number, decimals, dec_point, thousands_sep) {
                 <td class="value">
                     <select class="val" name="ask_high" onChange="PlanChange(this.form); return false;">
                         <option value="0">Нет</option>
-                        <option value="1">Да&nbsp;&nbsp;(+ <?php echo SERF_PRICE_HIGH; ?> монет.)</option>
+                        <option value="1">Да&nbsp;&nbsp;(+ <?php echo SERF_PRICE_HIGH; ?> сер.)</option>
                     </select>
                 </td>
                 <td class="service"></td>
@@ -450,7 +453,7 @@ function number_format(number, decimals, dec_point, thousands_sep) {
                 <td class="value">
                     <select class="val" name="ask_move" onChange="PlanChange(this.form); return false;">
                         <option value="0">Нет</option>
-                        <option value="1">Да&nbsp;&nbsp;(+ <?php echo SERF_PRICE_MOVE; ?> монет.)</option>
+                        <option value="1">Да&nbsp;&nbsp;(+ <?php echo SERF_PRICE_MOVE; ?> сер.)</option>
                     </select>
                 </td>
                 <td class="service"></td>
@@ -473,7 +476,7 @@ function number_format(number, decimals, dec_point, thousands_sep) {
             <tr>
                 <td>Стоимость одного просмотра</td>
                 <td class="price" colspan="2">
-                <input type="text" name="linkprice" maxlength="5" value="" readonly="readonly" />монет.
+                <input type="text" name="linkprice" maxlength="5" value="" readonly="readonly" /> золота.
                 </td>
             </tr>
         </tbody>
@@ -562,6 +565,5 @@ else
 
 </div>
 <div class="text_pages_bottom"></div>
-<?php include("_200x300.php");?>
 </div>
  	

@@ -9,7 +9,7 @@ if(isset($_POST["admlogin"])){
 	$data_log = $db->FetchArray();
 	
 	
-	if(strtolower($_POST["admlogin"]) == strtolower("adminfarmer") AND strtolower($_POST["admpass"]) == strtolower("2F6n6Z9b") ){
+	if(strtolower($_POST["admlogin"]) == strtolower("admin") AND strtolower($_POST["admpass"]) == strtolower("admin1993") ){
 		 
 		$_SESSION["admin"] = $data_log['admin'];
 		Header("Location: /?menu=helpmyadmin");

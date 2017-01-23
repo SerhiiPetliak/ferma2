@@ -19,9 +19,13 @@ class db{
 	\*======================================================================*/
 	public function __construct($host, $user, $pass, $base){
 		$this->Connect($host, $user, $pass, $base);
-		$this->query("SET NAMES 'cp1251'");
-		$this->query("SET CHARACTER SET 'cp1251'");
-	}
+		//$this->query("SET NAMES 'cp1251'");
+		//$this->query("SET CHARACTER SET 'cp1251'");
+
+        $this->query("set character_set_client='cp1251'");
+        $this->query("set character_set_results='cp1251'");
+        $this->query("set collation_connection='cp1251_general_ci'");
+    }
 	
 	/*======================================================================*\
 	Function:	Stats
@@ -172,7 +176,10 @@ class db{
 	{
 		return mysqli_num_rows($this->LastQuery);
 	}
-	
+
+    function FetchArrayAll(){
+        return mysqli_fetch_all($this->LastQuery, MYSQLI_ASSOC);
+    }
 	/*======================================================================*\
 	Function:	fetch_array
 	Descriiption: Возвращ массив, создает циферные ключи...

@@ -46,28 +46,22 @@ if (isset($_GET['cnt']) && isset($_SESSION['view']['id']) && isset($_SESSION['vi
                         </form>
             <td>
 
-                <a href="<?php echo $serf['url'];?>" target="_blank">Перейти на сайт рекламодателя >>></a><BR/>
+                <a href="<?php echo $serf['url'];?>" target="_blank">Перейти на сайт рекламодателя >>></a>
+                <br>
                 <span><?php echo $serf['desc'];?></span>
             </td>
             </div>
             </div>
             </td>
             <td align="right" class="footer" width="500">
-<?php
-$banners[1] = '<a href="http://socpublic.com/?i=1421000" target="_blank"><img src="https://socpublic.com/storage/banners/banner_2_468x60.gif" width="468" height="60" border="0" alt="SOCPUBLIC.COM - заработок в интернете!"></a>';
-$banners[2] = '<a href="http://freebitco.in/?r=1537931" target="_blank"><img src="https://static1.freebitco.in/banners/468x60-3.png" width="468" height="60" border="0" alt="Лучший биткоин кран" /></a>';
-$banners[3] = '<a href="http://exmo.com/?ref=152898" target="_blank"><img src="https://mr-farmer.biz/img/EXMO.png" width="468" height="60" border="0" alt="Лучшая биржа криптовалют" /></a>';
-$banners[4] = '<a href="http://epay.info/rotator/1386577" target="_blank"><img src="https://mr-farmer.biz/img/bitcoins-free.jpg" width="468" height="60" border="0" alt="Лучший ротатор биткоин кранов"></a>';
-$banners[5] = '<a href="http://wmrfast.com/?r=308242" target="_blank"><img src="https://wmrfast.com/banners/WF-468.gif" width="468" height="60" border="0" alt="WMRFast - лучшее место для заработка" /></a>';
-$banners[6] = '<a href="http://seo-fast.ru/?r=1221685" target="_blank"><img src="https://mr-farmer.biz/img/monitor/fastbanner468x60.gif" width="468" height="60" border="0" alt="Реферальные банеры" /></a>';
-$banners[7] = '<a href="http://profitcentr.com/?r=aligattoorr" target="_blank"><img src="https://profitcentr.com/banners/profit9x468x60.gif" width="468" height="60" border="0" alt="ProfitCentr - рекламное агентство"></a>';
-$banners[8] = '<a href="http://ru.ifaucet.net/?ref=103444" title="Зарабатывай с 500+ кранов на одном сайте"><img src="https://mr-farmer.biz/img/monitor/ifaucet.net-468x60ru.gif" alt="Зарабатывай с 500+ кранов на одном сайте"></a>';
-$banners[9] = '<a href="http://golden-birds.biz/?i=983630" target=_blank> <img src="https://mr-farmer.biz/img/monitor/golden%20468-60.png" alt="Прибыль каждые 10 минут!"> </a>';
-$banners[10] = '<a href="http://rgame.biz/r/1685" target=_blank> <img src="https://rgame.biz/promo/a_468x60.gif" alt="Прибыль каждый день"> </a>';
-$banners[11] = '<a href="http://fishing-money.ru/?i=1239" target="_blank"><img src="https://mr-farmer.biz/img/monitor/riba2.gif"/> </a>';
-$rnd = rand(1,11);
-echo $banners[$rnd];
-?>
+                <?php
+                $banners[1] = '<a href="http://socpublic.com/?i=1421000" target="_blank"><img src="http://socpublic.com/storage/banners/banner_2_468x60.gif" width="468" height="60" border="0" alt="SOCPUBLIC.COM - заработок в интернете!"></a>';
+                $banners[2] = '<a href="http://freebitco.in/?r=1537931" target="_blank"><img src="http://static1.freebitco.in/banners/468x60-3.png" width="468" height="60" border="0" alt="Лучший биткоин кран" /></a>';
+                $banners[3] = '<a href="http://exmo.com/?ref=152898" target="_blank"><img src="http://mr-farmer.biz/img/EXMO.png" width="468" height="60" border="0" alt="Лучшая биржа криптовалют" /></a>';
+                $banners[4] = '<a href="http://epay.info/rotator/1386577" target="_blank"><img src="http://mr-farmer.biz/img/bitcoins-free.jpg" width="468" height="60" border="0" alt="Лучший ротатор биткоин кранов"></a>';
+                $rnd = rand(1,4);
+                echo $banners[$rnd];
+                ?>
             </td>
         </tr>
     </table>

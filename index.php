@@ -89,10 +89,10 @@ $_timer_a = TimerSet();
 # Старт сессии
 @session_start();
 
-ini_set( 'session.cookie_domain', '.mr-farmer.biz' );
-session_set_cookie_params (0, '/', '.mr-farmer.biz');
+ini_set( 'session.cookie_domain', '.ferma' );
+session_set_cookie_params (0, '/', '.ferma');
 
-setcookie('PHPSESSID', session_id(), 0, '/', '.mr-farmer.biz');
+setcookie('PHPSESSID', session_id(), 0, '/', '.ferma');
 
 # Старт буфера
 @ob_start();
@@ -135,14 +135,13 @@ $db = new db($config->HostDB, $config->UserDB, $config->PassDB, $config->BaseDB)
 				case "about": include("pages/_about.php"); break; // О проекте
 				case "contacts": include("pages/_contacts.php"); break; // Контакты
 				case "competition": include("pages/_competition.php"); break; // Конкурсы
-                case "rotator": include("pages/_rotator.php"); break; // Ротатор
-                case "news": include("pages/_news.php"); break; // Новости
+
+                     case "news": include("pages/_news.php"); break; // Новости
 				case "signup": include("pages/_signup.php"); break; // Регистрация
 				case "login": include("pages/_login.php"); break; // Регистрация
 				case "recovery": include("pages/_recovery.php"); break; // Восстановление пароля
 				case "account": include("pages/_account.php"); break; // Аккаунт
-				case "polezno": include("pages/_polezno.php"); break; // Полезное
-				case "rekladd": include("pages/_rekladd.php"); break; // Заказ рекламы
+				case "account": include("pages/_polezno.php"); break; // Полезное
 				case "users": include("pages/_users_list.php"); break; // Пользователи
 				case "payments": include("pages/_payments_list.php"); break; // Выплаты
 				case "games": include("pages/_game.php"); break; // Выплаты

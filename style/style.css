@@ -8,14 +8,6 @@
 .bantop {
   margin-top:75px;
 }
-.raz div {
-  max-width: 8em; /* блок занимает ширину родителя, max-width её ограничивает */
-  min-height: 2em;
-  margin-left: 300;
-  margin-right: 0.7em;
-  border: 1px solid orange;
-  background: #fff5d7;
-}
 .paddingtable a{
     color:#666;
 }
@@ -376,7 +368,7 @@ right:100px;}
     width:auto;
     float:right;
     padding:4px 10px;
-    font-size:10px;
+    font-size:11px;
     color:#fff;
     background:#d21313;
     -webkit-border-radius:3px;
@@ -653,7 +645,464 @@ table {
     cursor: pointer !important;
     background-position: left top !important;
 }
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
 
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 600px;
+    background-color: #EFEFEF;
+    color: #000;
+    text-align: center;
+    padding: 10px 10px;
+    border-radius: 6px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    -webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.35);
+    -moz-box-shadow:    7px 7px 5px 0px rgba(50, 50, 50, 0.35);
+    box-shadow:         7px 7px 5px 0px rgba(50, 50, 50, 0.35);
+}
+/* Jobs */
+.jobs_main_title{
+    text-align: center;
+    padding: 10px;
+    background-color: #774E33;
+    color: #fff;
+    margin-bottom: 10px;
+}
+.jobs_message_title{
+    text-align: center;
+    padding: 10px;
+}
+.jobs_add_tr{
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+}
+.red-text{
+    color: red !important;
+}
+.green-text{
+    color: #00A20C !important;
+}
+.job_add_select{
+    width: 100%;
+}
+.job_add_small_text{
+    font-size: 12px;
+}
+.jobs_add_tr p{
+    margin: 0;
+}
+.jobs_management_mblock{
+    background-color: #F3F2E7;
+    border-bottom: 1px solid #D5D5D5;
+    height: 100px;
+    padding: 0;
+    margin: 0;
+}
+.jobs_management_left,
+.jobs_management_right{
+    float: left;
+    padding: 10px 10px 0px 10px;
+}
+.jobs_management_left{
+    width: 82%;
+    border-right: 1px solid #D5D5D5;
+}
+.jobs_management_commission{
+    background-color: #F3F2E7;
+    border: 1px solid #D5D5D5;
+    color: #BE7066;
+    padding: 10px;
+    font-size: 15px;
+    line-height: 17px;
+}
+.jobs_management_left_lbuttons{
+    float: left;
+}
+.jobs_management_left_rbuttons{
+    float: right;
+}
+.jobs_management_right{
+    text-align: center;
+    padding: 10px 6px 0px 10px !important;
+}
+.small_blue_text{
+    color: #0A246A !important;
+    font-size: 13px !important;
+}
+.medium_red_text{
+    color: red;
+    font-weight: bold;
+}
+.jobs_management_left_lbuttons_buttons{
+    display: inline-block;
+    text-align: center;
+    width: 34px;
+    height: 26px;
+    padding-top: 5px;
+    color: #fff;
+}
+.l_gray_button{
+    background-image: url("img/task_wait.png");
+    background-repeat: no-repeat;
+}
+.l_red_button{
+    background-image: url("img/task_no.png");
+    background-repeat: no-repeat;
+}
+.l_green_button{
+    background-image: url("img/task_yes.png");
+    background-repeat: no-repeat;
+}
+.l_blue_button{
+    background-image: url("img/task_inprogress.png");
+    background-repeat: no-repeat;
+}
+.jobs_normal_text{
+    font-size: 14px !important;
+    line-height: 20px;
+}
+.jobs_notes_td{
+    padding-left: 10px;
+}
+.jobs_notes_img_td{
+    vertical-align: middle;
+}
+.jobs_management_pay{
+    margin: 10px auto;
+    width: 97%;
+    border: 5px solid #C0E94D;
+    display: none;
+}
+.jobs_in_work_process_block {
+    margin: 10px auto;
+    width: 97%;
+    border: 5px solid #C0E94D;
+}
+.add-budget, .add-budgetnone {
+    text-align: center;
+    display: block;
+    border: none;
+    background: url(img/gold.png) no-repeat top center;
+    font-size: 12px;
+    padding-top: 30px;
+    color: #5B9F00;
+    cursor: pointer;
+}
+.add-budgetnone {
+    background: url(img/gold-none.png) no-repeat top center;
+    color: #AF0032;
+}
+.add-budget:hover, .add-budgetnone:hover {
+    border: none;
+    background: url(img/gold-act.png) no-repeat top center;
+    outline: none;
+    color: #EF6A00;
+}
+
+.add-budgetnone {
+    background: url(img/gold-none.png) no-repeat top center;
+    color: #AF0032;
+}
+.text-center{
+    text-align: center !important;
+}
+.jobs_management_pay_form_div{
+    margin-bottom: 10px;
+}
+.jobs_management_pay_form_div div{
+    margin-bottom: 5px;
+}
+.dark-green_text{
+    color: #356813 !important;
+}
+.black_text{
+    color: #000 !important;
+}
+.jobs_show_title{
+    margin-bottom: 10px;
+    background-color: #F3F2E7;
+    border: 1px solid #D5D5D5;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 15px;
+    line-height: 17px;
+}
+.vatop{
+    vertical-align: top;
+}
+.vamid{
+    vertical-align: middle;
+}
+.clearfix{
+    clear: both;
+}
+.grey_text{
+    color: #666 !important;
+}
+.jobs_show_button{
+    background: linear-gradient(to bottom, #0097B8 0%, #006288 100%) repeat-x scroll 0 0 rgba(0, 0, 0, 0) !important;
+    border-color: #006288 !important;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 0;
+    outline: 0 none;
+    padding: 4px 14px;
+    text-align: center;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    vertical-align: top;
+    margin-bottom: 10px;
+    width: 171px !important;
+}
+.p5{
+    padding: 5px;
+}
+.jobs_cansel_button {
+    background: linear-gradient(to bottom, #ef0013 0%, #ac060b 100%) repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+    border-color: #ac060b;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 0;
+    outline: 0 none;
+    padding: 4px 14px;
+    text-align: center;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    vertical-align: top;
+}
+.jobs_cansel_button:hover,
+.button-blue:hover{
+    cursor: pointer;
+}
+.jmp{
+    margin-bottom: 10px !important;
+}
+.jmp textarea{
+   width: 99%;
+}
+.tal{
+    text-align: left;
+}
+.big_blue_text{
+    font-weight: bold !important;
+    color: #0A246A !important;
+    font-size: 18px !important;
+}
+.jobs_header_menu{
+    text-align: center;
+    border-bottom: 1px solid #8c8c8c;
+    width: 60%;
+    margin: 5px auto;
+    padding: 5px;
+
+}
+.jobs_statuses_menu tr{
+    background-color: #F3F2E7;
+    text-align: center;
+}
+.jobs_sort_button{
+    background: linear-gradient(to bottom, #fff 0%, #F3F3F3 100%) repeat-x scroll 0 0 rgba(0, 0, 0, 0) !important;
+    border-color: #006288 !important;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    color: #0A246A !important;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 0;
+    outline: 0 none;
+    padding: 4px 14px;
+    text-align: center;
+    vertical-align: top;
+    margin-bottom: 10px;
+}
+.jobs_jlist_item{
+    background-color: #FDFDFD;
+    border: 1px solid #006288 !important;
+    border-bottom: 0px !important;
+    padding: 10px;
+}
+.jobs_jlist_item:nth-last-child(1){
+    border-bottom: 1px solid #006288 !important;
+}
+.jobs_lsort_last_div{
+    border-bottom: 1px solid #8c8c8c;
+    width: 80%;
+    margin: 10px auto;
+}
+.jobs_item_left{
+    float: left;
+}
+.jobs_item_right{
+    float: right;
+}
+.normal_blue-text{
+    font-size: 14px;
+    color: #0A246A !important;
+}
+.tar{
+    text-align: right;
+}
+.mb10{
+    margin-bottom: 10px;
+}
+.mb20{
+    margin-bottom: 20px;
+}
+.jobs_list_refresh_block{
+    margin-bottom: 5px;
+}
+.jobs_comment_item_right{
+    float: right;
+    width: 80%;
+    overflow: hidden;
+}
+.jobs_comment_item_right p{
+    margin: 0;
+}
+.jobs_comment_item,
+.jobs_finish_item{
+    padding: 5px;
+    border: 1px solid #8c8c8c;
+    border-bottom: 0px;
+}
+.jobs_comment_item:last-child,
+.jobs_finish_item:last-child{
+    border-bottom: 1px solid #8c8c8c;
+}
+.jobs_finish_item{
+    padding: 10px;
+}
+.jobs_finish_item textarea{
+    width: 100%;
+}
+.jobs_statistic_item{
+    padding: 10px;
+    border: 1px solid #8c8c8c;
+}
+.jobs_jlist_counter{
+    float: left;
+}
+.jobs_list_paginate{
+    float: right;
+}
+.transport-moder {
+    margin-top: 15px !important;
+    text-align: center;
+    display: block;
+    border: none;
+    background: url(img/gomoder.png) no-repeat top center;
+    font-size: 11px;
+    padding-top: 35px;
+    color: #5B9F00;
+    cursor: pointer;
+}
+.transport-moder:hover {
+    border: none;
+    background: url(img/gomoder-act.png) no-repeat top center;
+    outline: none;
+    color: #EF6A00;
+}
+.need_moderate_submit{
+    background: transparent !important;
+    border: 0px !important;
+}
+.need_moderate_submit:hover{
+    cursor: pointer;
+}
+.need_pay_init{
+    margin-top: 15px;
+    margin-left: 10px;
+}
+.pay_error{
+    display: none;
+}
+.custom_submit{
+    display: inline-block;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0px !important;
+    line-height: 16px !important;
+    text-shadow: none !important;
+    border: 0px !important;
+}
+.custom_submit:hover{
+    cursor: pointer;
+}
+.dark_blue_text{
+    color: #0A55C0 !important;
+}
+.orange_text{
+    color: #FFAD03 !important;
+}
+.jobs_management_up{
+    margin: 10px auto;
+    width: 97%;
+    border: 5px solid #C0E94D;
+    display: none;
+}
+.active_sort_button{
+    background: linear-gradient(to bottom, #fff 0%, #0AA102 100%) repeat-x scroll 0 0 rgba(0, 0, 0, 0) !important;
+}
+.di{
+    display: inline;
+}
+.jobs_list_paginate a{
+    margin: 0px 3px;
+    font-weight: bold;
+    color: #666;
+}
+.jobs_list_paginate a:hover,
+.jobs_list_paginate_active{
+    color: darkred !important;
+}
+.jobs_check-li{
+    font-weight: bold;
+}
+.bold_text{
+    font-weight: bold !important;
+}
+.text-12{
+    font-size: 12px !important;
+}
+.not_long_text{
+    max-width: 90% !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Многоточие */
+}
+.not_long_text_a{
+    max-width: 45% !important;
+    white-space: nowrap;
+    overflow: hidden;
+}
 /*-----------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------*/

@@ -97,7 +97,7 @@ if (isset($_POST['cnt']) && isset($_POST['num']) && isset($_SESSION['view']) && 
         //$pay_user = number_format($price - ($price*(10/100)), 2); //оплата пользователю
 
         $pay_user = number_format($price - (($price * $config_site['percent_serfing']) / 100), 2); // Вычитаем у пользователя проценты
-        $pay_user_b = number_format($pay_user - (($pay_user * 100) / 100), 2); // оплата пользователю на баланс для покупок
+        $pay_user_b = number_format($pay_user - (($pay_user * 30) / 100), 2); // оплата пользователю на баланс для покупок
         $pay_user_p = $pay_user - $pay_user_b; // оплата пользователю на баланс для вывода
         $pay_user_ref = $pay_user * 0.1; // оплата рефереру
 
@@ -107,7 +107,7 @@ if (isset($_POST['cnt']) && isset($_POST['num']) && isset($_SESSION['view']) && 
         //зачисление денег за просмотр рефереру
         $db->Query("SELECT referer_id FROM db_users_a WHERE id = '".$_SESSION['user_id']."'");
         $user_info = $db->FetchArray();
-        $db->query("UPDATE db_users_b SET `money_p` = `money_p` + '".$pay_user_ref."'	WHERE id = '".$user_info['referer_id']."'");
+        $db->query("UPDATE db_users_b SET `money_b` = `money_b` + '".$pay_user_ref."'	WHERE id = '".$user_info['referer_id']."'");
           
         //записываем просмотр списываем бабло
         $db->query("UPDATE db_serfing SET `view` = `view` + '1', `money` = `money` - '".$price."'	WHERE id = '".$id."'");

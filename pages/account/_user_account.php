@@ -66,7 +66,7 @@ $prof_data = $db->FetchArray();
 
 <div style="font-size: 16px;" class="block_img1">
 Для того чтобы еще больше зарабатывать в проекте, приглашайте как можно больше активных рефералов, друзей, знакомых. 
-<br>с помощью [<a href="/polezno.html"><font color="blue">Партнерской программы</font></a>] и вам будет начисляться <b>10%</b><br>
+<br>с помощью [<a href="/account/referals.html"><font color="blue">Партнерской программы</font></a>] и вам будет начисляться <b>10%</b><br>
  от суммы пополнений вашими рефералами, также от их зароботка в серфинге и на заданиях.
 </div>
 
@@ -74,5 +74,4 @@ $prof_data = $db->FetchArray();
 
 </div>
 <div class="text_pages_bottom"></div>
-<?php include("_200x300.php");?>
 </div>	

@@ -7,7 +7,6 @@ class func{
 	public $UserAgent = "Undefined"; // Браузер пользователя
 
 	
-	
 	public function secs2hours( $p_secs ){
 
 	if ($p_secs > 0) {

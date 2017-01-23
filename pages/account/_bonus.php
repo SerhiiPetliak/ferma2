@@ -5,18 +5,16 @@ $uname = $_SESSION["user"];
 
 # Настройки бонусов
 $bonus_min = 1;
-$bonus_max = 50;
+$bonus_max = 20;
 
 ?>
 <div class="text_right">
 	<div class="text_pages_top"></div>
 	<div class="text_pages_content">
-	<?php include("link_s.php");?>
 	<center>
 	<div class="bonuses">
 		<p>Бонус выдается 1 раз в 24 часа</p>
-		<p>Бонус выдается золотом на счет для покупок. Сумма бонуса генерируется от 1 до 50 монет.</p>
-		
+		<p>Бонус выдается золотом на счет для покупок. Сумма бонуса генерируется от 1 до 20 монет.</p>
 	</div>
 <?PHP
 $ddel = time() + 60*60*24;
@@ -65,7 +63,6 @@ $hide_form = false;
   <tr>
     <td align="center"><input type="submit" name="bonus" value="Получить бонус" style="height: 30px; margin-top:10px;"></td>
   </tr>
- 
 </table>
 </form>
 
@@ -76,17 +73,11 @@ $hide_form = false;
 	}else echo '<div class="already_got"><img src="../images/success.png">&nbsp; Вы уже получали бонус за последние 24 часа</div>
 	<div class="time_to">Вы можете получить Ваш бонус через: <span style="color:#a20003;">'.$func->secs2hours($row["date_del"] - $dadd).'</span></div>
 	'; ?>
-<hr>
-<table style="width: 100%">
 
-  <tr><br><br>
-  <div style="font-size: 18px; color: #006400">
-  Это может быть интересно:</div>
-  <br>
-  <div id="linkslot_144544"><script src="https://linkslot.ru/bancode.php?id=144544" async></script></div>
- <br>
-Последние 20 бонусов:
- </tr>
+
+
+
+<table style="width: 100%">
 <tr>
 	<th class="paddingtableb" width="10%">ID</th>
 	<th class="paddingtableb" width="45%">Пользователь</th>
@@ -119,9 +110,7 @@ $hide_form = false;
 </table>
 <center>
 </div>
-<div class="text_pages_bottom"></div> 
-<?php include("_200x300.php");?>
-
+<div class="text_pages_bottom"></div>
 </div>
 
 

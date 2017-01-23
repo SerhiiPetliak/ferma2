@@ -245,5 +245,4 @@ return;
 
 </div>
 <div class="text_pages_bottom"></div>
-
 </div>

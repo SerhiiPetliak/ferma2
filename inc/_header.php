@@ -9,27 +9,13 @@
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 		<script type="text/javascript" src="/js/jquery.js"></script>
 		<script type="text/javascript" src="/js/functions.js"></script>
-		<script type="text/javascript">
-function Menu(id)
-{
-var menu = document.getElementById('menu_' + id).style;
-if (menu.display == 'none')
-{
-menu.display = 'block';
-}
-else
-{
-menu.display = 'none';
-}
-}
-</script>
+
 		<style type="text/css">
  .spoiler_body { display:none; font-style:italic; }
  .spoiler_links { cursor:pointer; font-weight:bold; text-decoration:underline; }
  .blue { color:#000099; }
  .green { color:#009900; }
 </style>
-
 	</head>
 	<body>
 	<div class="body_wrap">
@@ -43,7 +29,7 @@ menu.display = 'none';
 					<li><a target="_blank" href="https://www.ok.ru/group/53248141820121" class="fa topicons"><img src="/images/icon/ok.png"/ alt="ok" title="Mr.Farmer в Одноклассниках"></a></li>
 					</ul>
 					<div class="right_lang">
-						<?php include("bad_bot/index.php"); ?>
+						
 					</div>
 					<div class="right_menu">
 						<?PHP include("inc/_menu_top.php"); ?>
@@ -62,5 +48,5 @@ menu.display = 'none';
 			
 				
 				<?php if(!empty($_GET['menu']) || !empty($_GET['sell'])) include("inc/_menu_left.php"); ?>
-			
+				
 	

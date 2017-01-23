@@ -112,7 +112,6 @@ if (isset($_POST['config'])) {
 </div>
 </div>
 <div class="text_pages_bottom"></div>
-<?php include("_200x300.php");?>
 </div>
 
 

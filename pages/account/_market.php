@@ -55,7 +55,6 @@ $all_items = $user_data["a_b"] + $user_data["b_b"] + $user_data["c_b"] + $user_d
 
 }
 ?>	
-<br />
 Здесь вы можете продать всю вашу продукцию за золото, которое можно обменять на реальные деньги. 
 Вырученное с продажи золото распределяется между двумя счетами (счет для покупок и счет для вывода) 
 в пропорциях: <?=100-$sonfig_site["percent_sell"]; ?>% на счет для покупок и <?=$sonfig_site["percent_sell"]; ?>% на вывод.
@@ -111,5 +110,4 @@ $all_items = $user_data["a_b"] + $user_data["b_b"] + $user_data["c_b"] + $user_d
 </div>
 </div>
 <div class="text_pages_bottom"></div>
-<?php include("_200x300.php");?>
 </div>

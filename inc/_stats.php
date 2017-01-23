@@ -9,7 +9,6 @@ $db->Query("SELECT
 $stats_data = $db->FetchArray();
 
 ?>
-
 <div class="container"> 
 	<div class="stats">
 		<ul>
@@ -49,11 +48,25 @@ $stats_data = $db->FetchArray();
 	<div class="bantop">	
 <table align="center" width="1000"> 
    <td>
- <iframe data-aa='324571' src='https://ad.a-ads.com/324571?size=468x60' scrolling='no' style='width:468px; height:60px; border:0px; padding:0;overflow:hidden' allowtransparency='true' frameborder='0'></iframe>
+   <?php
+$banners[1] = '<a href="http://socpublic.com/?i=1421000" target="_blank"><img src="http://socpublic.com/storage/banners/banner_2_468x60.gif" width="468" height="60" border="0" alt="SOCPUBLIC.COM - заработок в интернете!"></a>';
+$banners[2] = '<a href="http://freebitco.in/?r=1537931" target="_blank"><img src="http://static1.freebitco.in/banners/468x60-3.png" width="468" height="60" border="0" alt="Лучший биткоин кран" /></a>';
+$banners[3] = '<a href="http://exmo.com/?ref=152898" target="_blank"><img src="http://mr-farmer.biz/img/EXMO.png" width="468" height="60" border="0" alt="Лучшая биржа криптовалют" /></a>';
+$banners[4] = '<a href="http://epay.info/rotator/1386577" target="_blank"><img src="http://mr-farmer.biz/img/bitcoins-free.jpg" width="468" height="60" border="0" alt="Лучший ротатор биткоин кранов"></a>';
+$rnd = rand(1,4);
+echo $banners[$rnd];
+?>
    </td>
    <td>
-  <div id="linkslot_144542"><script src="https://linkslot.ru/bancode.php?id=144542" async></script></div>
- </td>
+  <?php
+$banners[1] = '<a href="http://wmrfast.com/?r=308242" target="_blank"><img src="http://wmrfast.com/banners/WF-468.gif" width="468" height="60" border="0" alt="WMRFast - лучшее место для заработка" /></a>';
+$banners[2] = '<a href="http://seo-fast.ru/?r=1221685" target="_blank"><img src="http://seo-fast.ru/site_banners/img/banner468x60.gif" width="468" height="60" border="0" alt="Реферальные банеры" /></a>';
+$banners[3] = '<a href="https://profitcentr.com/?r=aligattoorr" target="_blank"><img src="https://profitcentr.com/banners/profit9x468x60.gif" width="468" height="60" border="0" alt="ProfitCentr - рекламное агентство"></a>';
+$banners[4] = '<a href="http://ru.ifaucet.net/?ref=103444" title="Зарабатывай с 500+ кранов на одном сайте"><img src="http://i1.ru.ifaucet.net/ifaucet.net-468x60ru.gif" alt="Зарабатывай с 500+ кранов на одном сайте"></a>';
+$rnd = rand(1,4);
+echo $banners[$rnd];
+?>
+   </td>
 </table> 
 	</div>
 </div>

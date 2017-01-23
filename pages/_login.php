@@ -46,7 +46,7 @@ $referer_id = (isset($_COOKIE["i"]) AND intval($_COOKIE["i"]) > 0 AND intval($_C
 						$_SESSION["referer_id"] = $log_data["referer_id"];
 						Header("Location: /account.html");
 						
-		}else echo "<div class='err'>Аккаунт заблокирован. Причина: Создание мультиакаунта! Если это произошло по ошибке обратитесь к администратору! </div>";
+		}else echo "<div class='err'>Аккаунт заблокирован</div>";
 		}else echo "<div class='err'>Пароль указан неверно</div>";
 		}else echo "<div class='err'>Указанный пользователь не зарегистрирован в системе</div>";
 		}else echo "<div class='err'>Email указан неверно</div>";

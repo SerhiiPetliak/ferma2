@@ -27,6 +27,7 @@ $db = new db($config->HostDB, $config->UserDB, $config->PassDB, $config->BaseDB)
 switch($type){
 
 	case "sender": include("cron_job/_sender.php"); break; // Отправка пользователям
+    case "jobs_auto_up": include("cron_job/_jobs_auto_up.php"); break; // Автоматическое поднятие пользователей в верх списка
 	
 	
 	default: die("Type not exist"); break;
