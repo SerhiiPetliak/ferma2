@@ -1,0 +1,76 @@
+<!-- INCLUDE overall_header.html -->
+
+<a name="maincontent"></a>
+
+<!-- IF U_BACK -->
+	<a href="{U_BACK}" style="float: {S_CONTENT_FLOW_END};">&laquo; {L_BACK}</a>
+<!-- ENDIF -->
+
+<h1>{L_TITLE}</h1>
+
+<p>{L_TITLE_EXPLAIN}</p>
+
+<!-- IF S_WARNING -->
+	<div class="errorbox">
+		<h3>{L_WARNING}</h3>
+		<p>{WARNING_MSG}</p>
+	</div>
+<!-- ENDIF -->
+	
+<!-- IF S_NOTIFY -->
+	<div class="successbox">
+		<h3>{L_NOTIFY}</h3>
+		<p>{NOTIFY_MSG}</p>
+	</div>
+<!-- ENDIF -->
+
+<form id="attachments" method="post" action="{U_ACTION}">
+
+<fieldset class="tabulated">
+<legend>{L_TITLE}</legend>
+
+<table cellspacing="1">
+<thead>
+<tr>
+	<th>{L_FILENAME}</th>
+	<th>{L_FILEDATE}</th>
+	<th>{L_FILESIZE}</th>
+	<th>{L_ATTACH_POST_ID}</th>
+	<th>{L_ATTACH_TO_POST}</th>
+	<th>{L_DELETE}</th>
+</tr>
+</thead>
+<tbody>
+<!-- BEGIN attachments -->
+	<!-- IF orphan.S_ROW_COUNT is even --><tr class="row1"><!-- ELSE --><tr class="row2"><!-- ENDIF -->
+		<td><a href="{attachments.U_FILE}">{attachments.REAL_FILENAME}</a></td>
+		<td>{attachments.FILETIME}</td>
+		<td>{attachments.FILESIZE}</td>
+		<td><strong>{L_ATTACH_ID}: </strong><input type="text" name="post_id[{attachments.ATTACH_ID}]" size="7" maxlength="10" value="{attachments.POST_ID}" />
+											<input type="hidden" name="current_post_id[{attachments.ATTACH_ID}]" value="{attachments.POST_ID}" /></td>
+											<input type="hidden" name="current_topic_id[{attachments.ATTACH_ID}]" value="{attachments.TOPIC_ID}" />
+		<td><input type="checkbox" class="radio" name="add[{attachments.ATTACH_ID}]" /></td>
+		<td><input type="checkbox" class="radio" name="delete[{attachments.ATTACH_ID}]" /></td>
+	</tr>
+<!-- END attachments -->
+<tr class="row4">
+	<td colspan="4">&nbsp;</td>
+	<td class="small"><a href="#" onclick="marklist('attachments', 'add', true); return false;">{L_MARK_ALL}</a> :: <a href="#" onclick="marklist('attachments', 'add', false); return false;">{L_UNMARK_ALL}</a></td>
+	<td class="small"><a href="#" onclick="marklist('attachments', 'delete', true); return false;">{L_MARK_ALL}</a> :: <a href="#" onclick="marklist('attachments', 'delete', false); return false;">{L_UNMARK_ALL}</a></td>
+</tr>
+</tbody>
+</table>
+
+<br />
+
+<p class="submit-buttons">
+	<input class="button1" type="submit" id="submit" name="submit" value="{L_SUBMIT}" />&nbsp;
+	<input class="button2" type="reset" id="reset" name="reset" value="{L_RESET}" />
+</p>
+
+</fieldset>
+
+</form>
+
+
+<!-- INCLUDE overall_footer.html -->

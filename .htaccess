@@ -1,0 +1,111 @@
+AddDefaultCharset WINDOWS-1251
+DirectoryIndex index.php
+RewriteEngine On
+
+#  
+RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+RewriteRule ^account/serfing(/?)+$ index.php?menu=account&sel=serfing [L]
+RewriteRule ^account/serfing/edit/([0-9]+)(/?)+$ index.php?menu=account&sel=serfing_add&advedit=$1 [L]
+RewriteRule ^account/serfing/delete/([0-9]+)(/?)+$ index.php?menu=account&sel=serfing&delete=$1 [L]
+RewriteRule ^account/serfing/add(/?)+$ index.php?menu=account&sel=serfing_add [L]
+RewriteRule ^account/serfing/cabinet(/?)+$ index.php?menu=account&sel=serfing_cabinet [L]
+RewriteRule ^account/serfing/moder(/?)+$ index.php?menu=account&sel=serfing_moder [L]
+#RewriteRule ^account/serfing/view/([0-9]+)(/?)+$ _serfing_view.php?view=$1 [L]
+#RewriteRule ^account/serfing/view/([0-9]+)/([a-zA-Z0-9]+)(/?)+$ http://serf.mr-farmer.biz/_serfing_view.php?view=$1&afg=$2 [L]
+RewriteRule ^account/serfing/view/([0-9]+)(/?)+$ http://serf.mr-farmer.biz/_serfing_view.php?view=$1 [L]
+
+# 
+RewriteRule ^index.html$ index.php [L]
+
+# 
+RewriteRule ^rules.html(/?)+$ index.php?menu=rules [L]
+
+# 
+RewriteRule ^contacts.html(/?)+$ index.php?menu=contacts [L]
+
+# 
+RewriteRule ^news.html(/?)+$ index.php?menu=news [L]
+RewriteRule ^rotator.html(/?)+$ index.php?menu=rotator [L]
+RewriteRule ^rekladd.html(/?)+$ index.php?menu=rekladd [L]
+RewriteRule ^polezno.html(/?)+$ index.php?menu=polezno [L]
+
+#  
+RewriteRule ^about.html(/?)+$ index.php?menu=about [L]
+
+# 
+RewriteRule ^signup.html(/?)+$ index.php?menu=signup [L]
+RewriteRule ^login.html(/?)+$ index.php?menu=signup [L]
+
+#  
+RewriteRule ^recovery.html(/?)+$ index.php?menu=recovery [L]
+
+#  
+RewriteRule ^payments.html(/?)+$ index.php?menu=payments [L]
+RewriteRule ^otziv.html(/?)+$ index.php?menu=otziv [L]
+
+
+
+# 
+RewriteRule ^users/([0-9]+)(/?)+$ index.php?menu=users&page=$1 [L]
+RewriteRule ^users(/?)+$ index.php?menu=users [L]
+
+
+# 
+RewriteRule ^account.html(/?)+$ index.php?menu=account [L]
+RewriteRule ^account/shop.html(/?)+$ index.php?menu=account&sel=shop [L]
+RewriteRule ^account/farm.html(/?)+$ index.php?menu=account&sel=farm [L]
+RewriteRule ^account/balance.html(/?)+$ index.php?menu=account&sel=balance [L]
+
+RewriteRule ^account/advpayeer.html(/?)+$ index.php?menu=account&sel=advpayeer [L]
+
+RewriteRule ^account/withdraw.html/([0-9]+)(/?)+$ index.php?menu=account&sel=withdraw&pay_id=$1 [L]
+RewriteRule ^account/withdraw.html(/?)+$ index.php?menu=account&sel=withdraw [L]
+RewriteRule ^account/referals.html(/?)+$ index.php?menu=account&sel=referals [L]
+RewriteRule ^account/bonus.html(/?)+$ index.php?menu=account&sel=bonus [L]
+RewriteRule ^account/config.html(/?)+$ index.php?menu=account&sel=config [L]
+RewriteRule ^account/exchange.html(/?)+$ index.php?menu=account&sel=exchange [L]
+RewriteRule ^account/market.html(/?)+$ index.php?menu=account&sel=market [L]
+RewriteRule ^account/exit.html(/?)+$ index.php?menu=account&sel=exit [L]
+RewriteRule ^account/bonus2(/?)+$ index.php?menu=account&sel=bonus2 [L]
+RewriteRule ^account/bux4ik(/?)+$ index.php?menu=account&sel=bux4ik [L]
+RewriteRule ^account/chat(/?)+$ index.php?menu=account&sel=chat [L]
+RewriteRule ^account/rul(/?)+$ index.php?menu=account&sel=rul [L]
+RewriteRule ^chat/([a-z]+)/([a-zA-Z0-9]+)(/?)+$ index.php?menu=chat&t=$1&id=$2 [L]
+RewriteRule ^account/gono4ki(/?)+$ index.php?menu=account&sel=gono4ki [L]
+RewriteRule ^account/knb(/?)+$ index.php?menu=account&sel=knb [L]
+RewriteRule ^account/monitor(/?)+$ index.php?menu=account&sel=monitor [L]
+
+
+RewriteRule ^competition(/?)+$ index.php?menu=competition [L]
+RewriteRule ^competition/list(/?)+$ index.php?menu=competition&list [L]
+RewriteRule ^competition(/?)+$ index.php?menu=account&sel=payment [L]
+
+RewriteRule ^account/magazin(/?)+$ index.php?menu=account&sel=magazin [L]
+
+RewriteRule ^account/jobs(/?)+$ index.php?menu=account&sel=jobs [L]
+RewriteRule ^account/jobs/list(/?)+$ index.php?menu=account&sel=jobs&alljobs [L]
+RewriteRule ^account/jobs/add(/?)+$ index.php?menu=account&sel=jobs&add [L]
+RewriteRule ^account/jobs/save(/?)+$ index.php?menu=account&sel=jobs&add&save [L]
+RewriteRule ^account/jobs/stat(/?)+$ index.php?menu=account&sel=jobs&statuse [L]
+RewriteRule ^account/jobs/info(/?)+$ index.php?menu=account&sel=jobs&info [L]
+RewriteRule ^account/jobs/my(/?)+$ index.php?menu=account&sel=jobs&mylist [L]
+RewriteRule ^account/jobs/show/([0-9]+)(/?)+$ index.php?menu=account&sel=jobs&show=$1 [L]
+
+# чат
+RewriteRule ^chat/([a-z]+)/([a-zA-Z0-9]+)(/?)+$ index.php?menu=chat&t=$1&id=$2 [L]
+RewriteRule ^chat([a-z]+)/([a-zA-Z0-9]+)(/?)+$ index.php?menu=chat&t=$1&id=$2 [L]
+RewriteRule ^chat(/?)+$ index.php?menu=account&sel=chat [L]
+
+#Внутренняя почта
+RewriteRule ^account/pm(/?)+$ index.php?menu=account&sel=pm [L]
+RewriteRule ^account/pm/inbox(/?)+$ index.php?menu=account&sel=pm&inbox [L]
+RewriteRule ^account/pm/outbox(/?)+$ index.php?menu=account&sel=pm&outbox [L]
+RewriteRule ^account/pm/referals(/?)+$ index.php?menu=account&sel=pm&referals [L]
+
+#биржа
+RewriteRule ^account/birja(/?)+$ index.php?menu=account&sel=birja [L]
+RewriteRule ^account/mybirja(/?)+$ index.php?menu=account&sel=mybirja [L]
+
+

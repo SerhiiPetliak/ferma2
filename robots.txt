@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /bad_bot/
+Host: mr-farmer.biz
+Sitemap: http://mr-farmer.biz/sitemap.xml

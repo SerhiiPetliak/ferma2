@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+   		<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+			<sitemap>
+				<loc>http://localhost/forum1/sitemaps/sitemap_forums.xml</loc>
+				<lastmod>2009-11-20T13:47:23+02:00</lastmod>
+			</sitemap>
+			<sitemap>
+				<loc>http://localhost/forum1/sitemaps/sitemap_topics_0000000-0050000.xml</loc>
+				<lastmod>2009-11-20T13:47:23+02:00</lastmod>
+			</sitemap></sitemapindex>
